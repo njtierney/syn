@@ -3,6 +3,8 @@
 #' Installs the thesaurus from the [moby website here](https://github.com/words/moby/blob/master/words.txt)
 #'
 #' @return nothing - it installs the text file
+#'
+#' @importFrom utils download.file
 #' @export
 #'
 #' @examples

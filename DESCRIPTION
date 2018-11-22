@@ -3,12 +3,13 @@ Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
 Authors@R: person("Nicholas", "Tierney", email = "nicholas.tierney@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.4.4)
+Depends: R (>= 3.4.0)
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     fs,
-    here
+    here,
+    purrr
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
