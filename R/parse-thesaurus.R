@@ -5,7 +5,6 @@
 #' @param words_filename the location of 'words.txt' from moby thesaurus
 #' @param rds_filename the destiniation file
 #'
-#' @importFrom purrr map map_chr set_names
 #' @export
 #'
 parse_thesaurus <- function(words_filename, rds_filename = "~/syn.rds") {
@@ -14,10 +13,10 @@ parse_thesaurus <- function(words_filename, rds_filename = "~/syn.rds") {
   words_raw <- readLines(words_filename)
 
   # split the words between commas
-  words_split <- map(words_raw, ~strsplit(.x, split = ",")[[1]])
+  words_split <- purrr::map(words_raw, ~strsplit(.x, split = ",")[[1]])
 
   # Name each list of words with the first word in the list
-  words_syn <- set_names(words_split, map_chr(words_split, 1))
+  words_syn <- purrr::set_names(words_split, purrr::map_chr(words_split, 1))
 
   message("Compressing...")
   saveRDS(words_syn, file = rds_filename, compress = 'xz')
