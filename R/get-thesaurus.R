@@ -4,7 +4,6 @@
 #'
 #' @return nothing - it installs the text file
 #'
-#' @importFrom utils download.file
 #' @export
 #'
 #' @examples
@@ -16,7 +15,7 @@ get_thesaurus <- function(){
   if (fs::file_exists(here::here("data-raw/words.txt"))) {
     stop("File 'words.txt' already exists")
   }
-  download.file(
+  utils::download.file(
     url = "https://raw.githubusercontent.com/words/moby/master/words.txt",
     destfile = here::here("data-raw/words.txt")
   )

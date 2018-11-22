@@ -2,4 +2,3 @@
 
 export(get_thesaurus)
 export(parse_thesaurus)
-importFrom(utils,download.file)
