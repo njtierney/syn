@@ -5,8 +5,6 @@
 #' @param words_filename the location of 'words.txt' from moby thesaurus
 #' @param rds_filename the destiniation file
 #'
-#' @return
-#'
 #' @importFrom purrr map map_chr set_names
 #' @export
 #'
