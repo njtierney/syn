@@ -19,4 +19,7 @@ Syn: Get synonyms for one word
 }
 \examples{
 # put some examples here
+syn("good")
+syn("evil", 25)
+syns(c("good", "evil"), 10)
 }

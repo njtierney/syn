@@ -34,7 +34,7 @@ syn <- function(word, n_words = -1) {
 #' @examples
 #' # put some examples here
 #' @export
-syns <- function(words, n_words = NULL) {
+syns <- function(words, n_words = -1) {
 
   # We have to get our words_syn back out of the environment we stored it in
   words_syn <- get('words_syn', envir = getOption('syn_env'))
@@ -43,7 +43,10 @@ syns <- function(words, n_words = NULL) {
   # What happens when word doesn't exist?
   syns <- words_syn[words]
 
-  purrr::map(syns, sample, n_words) %>%
-    purrr::set_names(words)
+  if (n_words > 0) {
+    syns <- purrr::map(syns, sample, n_words)
+  }
+
+  purrr::set_names(syns, words)
 
 }
