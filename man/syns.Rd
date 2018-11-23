@@ -5,29 +5,18 @@
 \title{Syns: Get synonyms for many words}
 \usage{
 syns(words, n_words = -1)
-
-syns(words, n_words = -1)
 }
 \arguments{
 \item{words}{word, character - many words you want to find synonyms for}
 
 \item{n_words}{integer, the number of words to look for. An integer Default is all words}
-
-\item{words}{word, character - many words you want to find synonyms for}
-
-\item{n_words}{integer, the number of words to look for. Default is all words}
 }
 \value{
-named list of synonyms
-
 named list of synonyms
 }
 \description{
 Syns: Get synonyms for many words
-
-Syns: Get synonyms for many words
 }
 \examples{
-# put some examples here
 # put some examples here
 }

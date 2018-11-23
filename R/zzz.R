@@ -1,11 +1,10 @@
-
-
 #' Fetch the wrods list and create the R data if it doesn't exist on file
 #'
 #' @param words_filename location of Moby words.txt file
 #' @param syn_filename location of processed syn.rds file
 #'
-fetch_and_create <- function(words_filename = "~/words.txt", syn_filename = "~/syn.rds") {
+fetch_and_create <- function(words_filename = "~/words.txt",
+                             syn_filename = "~/syn.rds") {
 
   # If we don't have a words.txt file then download it
   if (!file.exists(words_filename)) {
