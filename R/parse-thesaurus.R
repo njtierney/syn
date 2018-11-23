@@ -1,5 +1,3 @@
-
-
 #' Parse the Moby words list
 #'
 #' @param words_filename the location of 'words.txt' from moby thesaurus
