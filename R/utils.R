@@ -7,3 +7,9 @@ stop_if_thesaurus_exists <- function(){
     stop("")
   }
 }
+
+stop_if_no_thesaurus <- function(){
+  if (!thesaurus_exists()){
+    error("'words.txt' file does not exist. ")
+  }
+}
