@@ -4,12 +4,12 @@ thesaurus_exists <- function(){
 
 stop_if_thesaurus_exists <- function(){
   if (thesaurus_exists()){
-    stop("")
+    stop("stop if thesaurus exist")
   }
 }
 
 stop_if_no_thesaurus <- function(){
   if (!thesaurus_exists()){
-    error("'words.txt' file does not exist. ")
+    stop("'words.txt' file does not exist. ")
   }
 }

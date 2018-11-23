@@ -4,12 +4,13 @@
 \alias{parse_thesaurus}
 \title{Parse the Moby words list}
 \usage{
-parse_thesaurus(words_filename, rds_filename = "~/syn.rds")
+parse_thesaurus(words_filename = "~/words.txt",
+  syn_filename = "~/syn.rds")
 }
 \arguments{
 \item{words_filename}{the location of 'words.txt' from moby thesaurus}
 
-\item{rds_filename}{the destiniation file}
+\item{syn_filename}{the destiniation file}
 }
 \description{
 Parse the Moby words list

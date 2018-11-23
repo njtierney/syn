@@ -3,11 +3,11 @@
 #' Parse the Moby words list
 #'
 #' @param words_filename the location of 'words.txt' from moby thesaurus
-#' @param rds_filename the destiniation file
+#' @param syn_filename the destiniation file
 #'
 #' @export
 #'
-parse_thesaurus <- function(words_filename, rds_filename = "~/syn.rds") {
+parse_thesaurus <- function(words_filename = "~/words.txt", syn_filename = "~/syn.rds") {
 
   # Read each line into a character vector
   words_raw <- readLines(words_filename)
@@ -19,5 +19,5 @@ parse_thesaurus <- function(words_filename, rds_filename = "~/syn.rds") {
   words_syn <- purrr::set_names(words_split, purrr::map_chr(words_split, 1))
 
   message("Compressing...")
-  saveRDS(words_syn, file = rds_filename, compress = 'xz')
+  saveRDS(words_syn, file = syn_filename, compress = 'xz')
 }

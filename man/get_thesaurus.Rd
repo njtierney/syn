@@ -4,7 +4,10 @@
 \alias{get_thesaurus}
 \title{Install the thesaurus from moby website}
 \usage{
-get_thesaurus()
+get_thesaurus(words_filename = "~/words.txt")
+}
+\arguments{
+\item{words_filename}{the location of the moby words file list}
 }
 \value{
 nothing - it installs the text file
