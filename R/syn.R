@@ -7,6 +7,9 @@
 #'
 #' @examples
 #' # put some examples here
+#' syn("good")
+#' syn("evil", 25)
+#' syns(c("good", "evil"), 10)
 #' @export
 syn <- function(word, n_words = -1) {
   # We have to get our words_syn back out of the environment we stored it in
@@ -31,7 +34,7 @@ syn <- function(word, n_words = -1) {
 #' @examples
 #' # put some examples here
 #' @export
-syns <- function(words, n_words = -1) {
+syns <- function(words, n_words = NULL) {
 
   # We have to get our words_syn back out of the environment we stored it in
   words_syn <- get('words_syn', envir = getOption('syn_env'))
