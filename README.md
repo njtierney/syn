@@ -16,9 +16,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(syn)
-#> in onLoad()
-#> Found ~/words.txt
-#> Found ~/syn.rds
+
 ## basic example code
 synonyms <- syn("cool") 
 

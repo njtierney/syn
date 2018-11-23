@@ -16,6 +16,7 @@ LazyData: true
 Imports: 
     fs,
     here,
-    purrr
+    purrr,
+    magrittr
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)

@@ -2,29 +2,35 @@
 % Please edit documentation in R/syn.R
 \name{syn}
 \alias{syn}
-\title{Syn}
+\title{Syn: Get synonyms for one word}
 \usage{
 syn(word, n_words = -1)
 
 syn(word, n_words = -1)
 }
 \arguments{
-\item{word}{word}
+\item{word}{character, one word you want to find synonyms for}
 
 \item{n_words}{integer, the number of words to look for. An integer Default is all words}
 
 \item{word}{character, one word you want to find synonyms for}
+
+\item{n_words}{integer, the number of words to look for. An integer Default is all words}
 }
 \value{
-words
+synonyms of the word you entered
 
 synonyms of the word you entered
 }
 \description{
-Syn
+Syn: Get synonyms for one word
 
 Syn: Get synonyms for one word
 }
 \examples{
+# put some examples here
+syn("good")
+syn("evil", 25)
+syns(c("good", "evil"), 10)
 # put some examples here
 }

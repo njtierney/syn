@@ -28,8 +28,9 @@ That is it.
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r example, message = FALSE, warnings = FALSE}
 library(syn)
+
 ## basic example code
 synonyms <- syn("cool") 
 
