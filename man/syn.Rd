@@ -4,14 +4,27 @@
 \alias{syn}
 \title{Syn}
 \usage{
-syn(word)
+syn(word, n_words = -1)
+
+syn(word, n_words = -1)
 }
 \arguments{
 \item{word}{word}
+
+\item{n_words}{integer, the number of words to look for. An integer Default is all words}
+
+\item{word}{character, one word you want to find synonyms for}
 }
 \value{
 words
+
+synonyms of the word you entered
 }
 \description{
 Syn
+
+Syn: Get synonyms for one word
+}
+\examples{
+# put some examples here
 }
