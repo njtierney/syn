@@ -1,5 +1,7 @@
 
 .onLoad <- function(...) {
+  if (!interactive()) { return() }
+
   packageStartupMessage("in onLoad()")
 
   words_filename <- "~/words.txt"
