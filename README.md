@@ -36,3 +36,18 @@ paste0("This is really ", synonyms[1:10], "!")
 #>  [9] "This is really above all that!"       
 #> [10] "This is really absolute zero!"
 ```
+
+It is also possible to obtain the synonyms for multiple words in one go and select a random sample.
+
+``` r
+syns(c("good", "evil"), 10)
+#> $good
+#>  [1] "upstanding"    "kindly"        "uncolored"     "straight"     
+#>  [5] "wise"          "all-wise"      "avail"         "respected"    
+#>  [9] "softheartedly" "rewarding"    
+#> 
+#> $evil
+#>  [1] "slip"          "unseemly"      "unforgivable"  "unscrupulous" 
+#>  [5] "ill-starred"   "inappropriate" "insidious"     "repulsive"    
+#>  [9] "traitorous"    "unfitting"
+```
