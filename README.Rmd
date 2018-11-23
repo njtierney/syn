@@ -39,3 +39,9 @@ paste0("This is really cool!")
 # OR 
 paste0("This is really ", synonyms[1:10], "!")
 ```
+
+It is also possible to obtain the synonyms for multiple words in one go and select a random sample. 
+
+```{r example2}
+syns(c("good", "evil"), 10)
+```

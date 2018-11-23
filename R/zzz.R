@@ -18,23 +18,35 @@ fetch_and_create <- function(words_filename = "~/words.txt", syn_filename = "~/s
   if (!file.exists(syn_filename)) {
     parse_thesaurus(words_filename, syn_filename)
   }
-  message("Loading ", syn_filename)
 
-  # Read in our pre-parsed synonyms data structure
-  words_syn <- readRDS(syn_filename)
-
-  # Create a new environment in which to store our dynamic data
-  # Add store it in "options" so that it's available to elsewhere
-  syn_env <- new.env()
-  options(syn_env = syn_env)
-
-  # Store our words list in this environment.
-  syn_env$words_syn <- words_syn
 }
 
 
 .onLoad <- function(...) {
+
+  words_filename <- "~/words.txt"
+  syn_filename <- "~/syn.rds"
+
+  # Only go through the pain of downloading if in interactive mode
   if (interactive()) {
     fetch_and_create()
   }
+
+  # always try and load the data if the file exists. This is so
+  # the data gets loaded even if we're not interactive e.g. knitting Rmd
+  if (file.exists(syn_filename)) {
+    packageStartupMessage("Loading ", syn_filename)
+
+    # Read in our pre-parsed synonyms data structure
+    words_syn <- readRDS(syn_filename)
+
+    # Create a new environment in which to store our dynamic data
+    # Add store it in "options" so that it's available to elsewhere
+    syn_env <- new.env()
+    options(syn_env = syn_env)
+
+    # Store our words list in this environment.
+    syn_env$words_syn <- words_syn
+  }
+
 }
