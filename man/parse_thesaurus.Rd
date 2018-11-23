@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse-thesaurus.R
 \name{parse_thesaurus}
 \alias{parse_thesaurus}
-\title{Parse the Moby words list}
+\title{Parse the Moby thesaurus word list into a R list and save to file}
 \usage{
 parse_thesaurus(words_filename = "~/words.txt",
   syn_filename = "~/syn.rds")
@@ -13,5 +13,11 @@ parse_thesaurus(words_filename = "~/words.txt",
 \item{syn_filename}{the destiniation file}
 }
 \description{
-Parse the Moby words list
+The word list as downloaded is a raw text file with one index word per line.
+Following each index word is a comma-separated list of synonyms.
+}
+\details{
+This code splits that original text file into lines, breaks up the words
+from each line (by splitting on commas) and creates a named list of
+character vectors.
 }

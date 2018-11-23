@@ -1,24 +1,26 @@
 
 
-fetch_and_create <- function(words_filename, syn_filename) {
-  message("in onLoad()")
+#' Fetch the wrods list and create the R data if it doesn't exist on file
+#'
+#' @param words_filename location of Moby words.txt file
+#' @param syn_filename location of processed syn.rds file
+#'
+fetch_and_create <- function(words_filename = "~/words.txt", syn_filename = "~/syn.rds") {
 
-  words_filename <- "~/words.txt"
-  syn_filename <- "~/syn.rds"
-
+  # If we don't have a words.txt file then download it
   if (!file.exists(words_filename)) {
     message("Downloading ", words_filename)
     get_thesaurus(words_filename)
   }
-  message("Found ", words_filename)
+  message("Loading ", words_filename)
 
+  # If the syn.rds file doesn't exist then create it
   if (!file.exists(syn_filename)) {
-    message("Creating ", syn_filename)
     parse_thesaurus(words_filename, syn_filename)
   }
-  message("Found ", syn_filename)
+  message("Loading ", syn_filename)
 
-  # Somehow read in our pre-parsed synonyms data structure
+  # Read in our pre-parsed synonyms data structure
   words_syn <- readRDS(syn_filename)
 
   # Create a new environment in which to store our dynamic data
