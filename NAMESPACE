@@ -2,3 +2,4 @@
 
 export(get_thesaurus)
 export(parse_thesaurus)
+export(syn)
