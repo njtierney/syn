@@ -19,5 +19,5 @@ parse_thesaurus <- function(words_filename = "~/words.txt", syn_filename = "~/sy
   words_syn <- purrr::set_names(words_split, purrr::map_chr(words_split, 1))
 
   message("Compressing...")
-  saveRDS(words_syn, file = syn_filename, compress = 'xz')
+  saveRDS(words_syn, file = syn_filename, compress = TRUE)
 }
