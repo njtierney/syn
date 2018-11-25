@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 The goal of syn is to provide two main functions:
 
 - `syn` - generate synonyms
-- `ant` - generate antonyms (needs work).
+- `ant` - generate antonyms (not done yet).
 
 That is it.
 

@@ -12,18 +12,18 @@
 #' syns(c("good", "evil"), 10)
 #' @export
 syn <- function(word, n_words = -1) {
-  # We have to get our words_syn back out of the environment we stored it in
-  words_syn <- get('words_syn', envir = getOption('syn_env'))
 
-  # Then we can look up our word.
-  # What happens when word doesn't exist?
-  if (n_words < 0) {
-    words_syn[[word]]
-  } else {
-    sample(words_syn[[word]], n_words)
+  indices <- words_idx[[word]]
+
+  if (n_words > 0L && length(indices) > 0L) {
+    # Avoid trying to sample more words than we have.
+    n_words <- min(n_words, length(indices))
+    indices <- sample(indices, n_words)
   }
 
+  all_words[indices]
 }
+
 
 #' Syns: Get synonyms for many words
 #'
@@ -36,17 +36,8 @@ syn <- function(word, n_words = -1) {
 #' @export
 syns <- function(words, n_words = -1) {
 
-  # We have to get our words_syn back out of the environment we stored it in
-  words_syn <- get('words_syn', envir = getOption('syn_env'))
+  res <- purrr::map(words, syn, n_words)
 
-  # Then we can look up our word.
-  # What happens when word doesn't exist?
-  syns <- words_syn[words]
-
-  if (n_words > 0) {
-    syns <- purrr::map(syns, sample, n_words)
-  }
-
-  purrr::set_names(syns, words)
+  purrr::set_names(res, words)
 
 }
