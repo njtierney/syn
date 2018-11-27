@@ -7,8 +7,7 @@ Authors@R: c(person("Nicholas", "Tierney", email = "nicholas.tierney@gmail.com",
              person("Laura", "de Jong", role = c("aut")),
              person("Thomas", "Lumley", email = "thomas.lumley@r-project.org", role = c("ctb")))
 Description: Generates synoynms from a given word drawing from a synonym list
-    from the 'moby' project. This requires an internet connection to download 
-    the first time the package is used, but is otherwise entirely offline.
+    from the 'moby' project.
 Depends: R (>= 3.4.0)
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
@@ -20,3 +19,7 @@ Imports:
     magrittr
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
+Suggests: 
+    glue,
+    covr,
+    testthat

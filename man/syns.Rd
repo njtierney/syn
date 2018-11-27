@@ -18,5 +18,5 @@ named list of synonyms
 Syns: Get synonyms for many words
 }
 \examples{
-# put some examples here
+syns(c("good", "evil"), 10)
 }

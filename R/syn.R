@@ -9,7 +9,6 @@
 #' # put some examples here
 #' syn("good")
 #' syn("evil", 25)
-#' syns(c("good", "evil"), 10)
 #' @export
 syn <- function(word, n_words = -1) {
 
@@ -32,7 +31,7 @@ syn <- function(word, n_words = -1) {
 #'
 #' @return named list of synonyms
 #' @examples
-#' # put some examples here
+#' syns(c("good", "evil"), 10)
 #' @export
 syns <- function(words, n_words = -1) {
 
