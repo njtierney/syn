@@ -1,3 +1,7 @@
+# syn 0.0.0.9931
+
+* Add a hex sticker, add and improve upon website
+
 # syn 0.0.0.9930
 
 * Reduce the dependencies down to none!
