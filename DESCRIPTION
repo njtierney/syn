@@ -13,6 +13,8 @@ License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+URL: http://syn.njtierney.com/, https://github.com/ropenscilabs/syn
+BugReports: https://github.com/ropenscilabs/syn/issues
 Roxygen: list(markdown = TRUE)
 Suggests: 
     glue,
