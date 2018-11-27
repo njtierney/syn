@@ -16,7 +16,17 @@ knitr::opts_chunk$set(
 
 [![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
 
-`syn` is a **zero dependency** R package that lists synonyms.
+`syn` is a **zero dependency** R package that lists synonyms and antonyms.
+
+There are two main functions:
+
+- `syn("great")` Returns synonyms of "great"
+- `ant("great")` Returns antonyms of "great".
+
+`syn` and `ant` take one word as input. To return synonyms for many words, use the plural form: `syn`**s**, and `ant`**s** 
+
+- `syns(c("great", "excellent")` Returns named list of synonyms of "great", and "excellent"
+- `ants(c("great", "excellent")` Returns named list of antonyms of "great", and "excellent"
 
 ## Example: Synonyms for "cool"
 
@@ -77,9 +87,20 @@ syns(c("good", "evil"),
      n_words =  10)
 ```
 
-## Future Work
+## Example: Antonyms (under development)
 
-In the future we will provide a similar set of functions for anyonyms: `ant` and `ants`.
+To create antonyms, use `ant` and `ants`, which have the same inputs as `syn`. However, at this stage, the number of antonyms available for use by `ant` is small.
+
+```{r ant-n-words}
+ant("good")
+ant("good",1)
+```
+
+```{r ants-n-words}
+ants(c("good", "evil"),
+     n_words =  10)
+```
+
 
 ## Code of Conduct
 

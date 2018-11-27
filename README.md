@@ -9,7 +9,21 @@ build
 status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage
 status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
 
-`syn` is a **zero dependency** R package that lists synonyms.
+`syn` is a **zero dependency** R package that lists synonyms and
+antonyms.
+
+There are two main functions:
+
+  - `syn("great")` Returns synonyms of “great”
+  - `ant("great")` Returns antonyms of “great”.
+
+`syn` and `ant` take one word as input. To return synonyms for many
+words, use the plural form: `syn`**s**, and `ant`**s**
+
+  - `syns(c("great", "excellent")` Returns named list of synonyms of
+    “great”, and “excellent”
+  - `ants(c("great", "excellent")` Returns named list of antonyms of
+    “great”, and “excellent”
 
 ## Example: Synonyms for “cool”
 
@@ -37,19 +51,19 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…quiet mind, I guess.
+Wow\! There are 618 synonyms for cool. That’s…fine and dandy, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "untouchable"
+#> [1] "august"
 syn("awesome", 2)
-#> [1] "mysterious" "incredible"
+#> [1] "spiritual"   "unspeakable"
 syn("awesome", 5)
-#> [1] "overwhelming"  "enormous"      "imposing"      "massy"        
-#> [5] "awe-inspiring"
+#> [1] "sublime"      "dreaded"      "frightening"  "unbelievable"
+#> [5] "sacred"
 ```
 
 ## Example: Creating a sentence
@@ -62,18 +76,18 @@ of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really resting!
+#> This is really ace-high!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really crispness!
-#> This is really unloving!
-#> This is really inimical!
-#> This is really frigidity!
-#> This is really out of touch!
-#> This is really meden agan!
-#> This is really unexpansive!
-#> This is really heartless!
-#> This is really toning!
-#> This is really retrench!
+#> This is really via media!
+#> This is really reposeful!
+#> This is really coolness!
+#> This is really fervorless!
+#> This is really uncongenial!
+#> This is really contain!
+#> This is really restful!
+#> This is really lenity!
+#> This is really lukewarm!
+#> This is really tingent!
 ```
 
 ## Using multiple words with `syns`
@@ -96,22 +110,39 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "welcome"       "omniscient"    "allowable"     "agreeable"    
-#>  [5] "encomiastic"   "warranted"     "proper"        "legal"        
-#>  [9] "yes sirree"    "well and good"
+#>  [1] "unworldly"       "sortable"        "masterly"       
+#>  [4] "secure"          "laudable"        "sovereign"      
+#>  [7] "really"          "self-consistent" "gratifying"     
+#> [10] "merchandise"    
 #> 
 #> $evil
-#>  [1] "genocide"               "crime against humanity"
-#>  [3] "Loki"                   "ghastly"               
-#>  [5] "catty"                  "threatening"           
-#>  [7] "curse"                  "repulsive"             
-#>  [9] "obscene"                "unpropitious"
+#>  [1] "bother"        "corruption"    "nefariousness" "baseness"     
+#>  [5] "unmorality"    "curse"         "noxious"       "fault"        
+#>  [9] "repulsive"     "misfortune"
 ```
 
-## Future Work
+## Example: Antonyms (under development)
 
-In the future we will provide a similar set of functions for anyonyms:
-`ant` and `ants`.
+To create antonyms, use `ant` and `ants`, which have the same inputs as
+`syn`. However, at this stage, the number of antonyms available for use
+by `ant` is small.
+
+``` r
+ant("good")
+#> [1] NA NA
+ant("good",1)
+#> [1] NA
+```
+
+``` r
+ants(c("good", "evil"),
+     n_words =  10)
+#> $good
+#> [1] NA NA
+#> 
+#> $evil
+#> [1] NA
+```
 
 ## Code of Conduct
 
