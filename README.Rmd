@@ -16,24 +16,9 @@ knitr::opts_chunk$set(
 
 [![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
 
-The goal of `syn` is to provide two main functions:
+`syn` is a **zero dependency** R package that lists synonyms.
 
-- `syn`, which generates synonyms
-- `ant`, which generates antonyms
-
-(Currently only `syn` is working, `ant`, will be developed in the future.)
-
-## Where does the data come from?
-
-The data comes from [`words/moby`](https://github.com/words/moby) repository, which, in their words:
-
-> ...[moby-thesaurus.org](http://moby-thesaurus.org) is a free and
-open-source website designed to facilitate meanderings through the [Moby
-Thesaurus](http://en.wikipedia.org/wiki/Moby_Project#Thesaurus), the largest
-thesaurus in the English language. As of version 1.0, this package also includes
-synonym data from the [Open Office thesaurus](http://goo.gl/UGBfHI).
-
-## Synonyms for "cool"
+## Example: Synonyms for "cool"
 
 The `syn` function returns all synonyms for a given word:
 
@@ -56,8 +41,6 @@ length(syn_cool)
 
 Wow! There are `r length(syn_cool)` synonyms for cool. That's...`r syn("cool", 1)`, I guess.
 
-## Set the number of words to return
-
 You can also provide it a number of words to return with the `n_words` argument, which will randomly select the number of words given
 
 ```{r syn-awesome-one}
@@ -66,11 +49,10 @@ syn("awesome", 2)
 syn("awesome", 5)
 ```
 
-OK cool, let's use these in a sentence, using the `glue` package. 
 
 ## Example: Creating a sentence
 
-Which of these better?
+OK cool, let's use these in a sentence, using the `glue` package. Which of these better?
 
 ```{r example-syn-glue}
 
@@ -79,7 +61,7 @@ glue::glue("This is really {syn('cool', 1)}!")
 glue::glue("This is really {syn('cool', 10)}!")
 ```
 
-## Using multiple words
+## Using multiple words with `syns`
 
 You can generate synonyms for multiple words with the `syns` function. This takes a vector of words, returning a named list
 
@@ -88,12 +70,16 @@ syns_good_evil <- syns(c("good", "evil"))
 str(syns_good_evil)
 ```
 
-You can also provide `n_words` for `syns`, and it will return a random number of the words.
+You can also provide `n_words` for `syns`, and it will return a random selection of the words of that number.
 
 ```{r syns-n-words}
 syns(c("good", "evil"),
      n_words =  10)
 ```
+
+## Future Work
+
+In the future we will provide a similar set of functions for anyonyms: `ant` and `ants`.
 
 ## Code of Conduct
 
