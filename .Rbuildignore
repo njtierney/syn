@@ -1,3 +1,5 @@
+^codecov\.yml$
+^CODE_OF_CONDUCT\.md$
 ^appveyor\.yml$
 ^\.travis\.yml$
 ^data-raw$
