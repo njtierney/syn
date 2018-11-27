@@ -3,16 +3,35 @@
 
 # syn
 
-The goal of syn is to provide two main functions:
+[![Travis build
+status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor
+build
+status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage
+status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
+
+The goal of `syn` is to provide two main functions:
 
   - `syn`, which generates synonyms
   - `ant`, which generates antonyms
 
-Currently only `syn` is working, `ant`, will be developed in the future.
+(Currently only `syn` is working, `ant`, will be developed in the
+future.)
+
+## Where does the data come from?
+
+The data comes from [`words/moby`](https://github.com/words/moby)
+repository, which, in their words:
+
+> …[moby-thesaurus.org](http://moby-thesaurus.org) is a free and
+> open-source website designed to facilitate meanderings through the
+> [Moby Thesaurus](http://en.wikipedia.org/wiki/Moby_Project#Thesaurus),
+> the largest thesaurus in the English language. As of version 1.0, this
+> package also includes synonym data from the [Open Office
+> thesaurus](http://goo.gl/UGBfHI).
 
 ## Synonyms for “cool”
 
-The `syn` function returns all synonyms for a given word.
+The `syn` function returns all synonyms for a given word:
 
 Let’s look at synonyms for “cool”:
 
@@ -36,7 +55,7 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…aguey, I guess.
+Wow\! There are 618 synonyms for cool. That’s…unmoved, I guess.
 
 ## Set the number of words to return
 
@@ -45,12 +64,11 @@ argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "fearful"
+#> [1] "heavenly"
 syn("awesome", 2)
-#> [1] "mighty"   "infinite"
+#> [1] "bulky"        "unbelievable"
 syn("awesome", 5)
-#> [1] "high and mighty" "big"             "awesome"         "titanic"        
-#> [5] "fearsome"
+#> [1] "glorified"   "monster"     "held in awe" "estimable"   "excellent"
 ```
 
 OK cool, let’s use these in a sentence, using the `glue` package.
@@ -64,18 +82,18 @@ Which of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really chilly!
+#> This is really unastonished!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really knock off!
-#> This is really imperturbability!
-#> This is really detached!
-#> This is really insolent!
-#> This is really prohibit!
-#> This is really liquidate!
-#> This is really tinctorial!
-#> This is really pragmatic!
-#> This is really glorious!
-#> This is really half-frozen!
+#> This is really solitary!
+#> This is really hold in check!
+#> This is really at rest!
+#> This is really nothing in excess!
+#> This is really frozen to death!
+#> This is really undazed!
+#> This is really coldness!
+#> This is really firm as Gibraltar!
+#> This is really air-condition!
+#> This is really ice!
 ```
 
 ## Using multiple words
@@ -98,12 +116,19 @@ number of the words.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "changeless"     "esteemed"       "noble"          "profitable"    
-#>  [5] "complimentary"  "constitutional" "yeomanly"       "minimum"       
-#>  [9] "benignant"      "effects"       
+#>  [1] "verisimilar"  "needed"       "delectable"   "adept"       
+#>  [5] "agreeable"    "straight"     "material"     "unfictitious"
+#>  [9] "sweet"        "compelling"  
 #> 
 #> $evil
-#>  [1] "peccancy"     "arrant"       "ugly"         "can of worms"
-#>  [5] "ill-boding"   "malefic"      "ruinous"      "angry"       
-#>  [9] "flagitious"   "pestilence"
+#>  [1] "sin of commission" "evildoing"         "not the thing"    
+#>  [4] "destructive"       "amorality"         "delinquent"       
+#>  [7] "unlawful"          "scandal"           "awful"            
+#> [10] "catastrophic"
 ```
+
+## Code of Conduct
+
+Please note that the ‘syn’ project is released with a [Contributor Code
+of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you
+agree to abide by its terms.

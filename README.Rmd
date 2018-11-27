@@ -16,18 +16,26 @@ knitr::opts_chunk$set(
 
 [![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
 
-The goal of syn is to provide two main functions:
+The goal of `syn` is to provide two main functions:
 
 - `syn`, which generates synonyms
 - `ant`, which generates antonyms
 
-Currently only `syn` is working, `ant`, will be developed in the future.
+(Currently only `syn` is working, `ant`, will be developed in the future.)
 
-Please note that the 'syn' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+## Where does the data come from?
+
+The data comes from [`words/moby`](https://github.com/words/moby) repository, which, in their words:
+
+> ...[moby-thesaurus.org](http://moby-thesaurus.org) is a free and
+open-source website designed to facilitate meanderings through the [Moby
+Thesaurus](http://en.wikipedia.org/wiki/Moby_Project#Thesaurus), the largest
+thesaurus in the English language. As of version 1.0, this package also includes
+synonym data from the [Open Office thesaurus](http://goo.gl/UGBfHI).
 
 ## Synonyms for "cool"
 
-The `syn` function returns all synonyms for a given word.
+The `syn` function returns all synonyms for a given word:
 
 Let's look at synonyms for "cool":
 
@@ -87,3 +95,6 @@ syns(c("good", "evil"),
      n_words =  10)
 ```
 
+## Code of Conduct
+
+Please note that the 'syn' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
