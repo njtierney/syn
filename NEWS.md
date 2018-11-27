@@ -1,3 +1,7 @@
+# syn 0.0.0.9910
+
+* Reduce the dependencies down to only `purrr`.
+
 # syn 0.0.0.9001
 
 * rewrite the core data structure to be a list of integer vectors
