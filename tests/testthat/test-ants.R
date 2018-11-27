@@ -21,14 +21,15 @@ test_that("ants n_words works", {
   expect_length(ants(c("cool", "evil"), 5)[[2]], 1)
 })
 
-
-test_that("ants returns 0 when it cannot find a word", {
+test_that("ants returns character(0) when it cannot find a word", {
   expect_length(ants("xxxx"), 1)
   expect_length(ants("xxxx")[[1]], 0)
+  expect_is(ants("xxxx")[[1]], "character")
 })
 
-test_that("ants with n_words returns 0 when it cannot find a word", {
+test_that("ants with n_words returns character(0) when it cannot find a word", {
   expect_length(ants("xxxx", 5), 1)
   expect_length(ants("xxxx", 5)[[1]], 0)
+  expect_is(ants("xxxx")[[1]], "character")
 })
 

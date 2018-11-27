@@ -4,8 +4,9 @@ test_that("syn pulls the right number of words for cool", {
   expect_length(syn("cool"), 618)
 })
 
-test_that("syn returns 0 when it cannot find a word", {
+test_that("syn returns character(0) when it cannot find a word", {
   expect_length(syn("xxxx"), 0)
+  expect_is(syn("xxxx"), "character")
 })
 
 test_that("syn pulls the right number of words for cool with n_words", {
