@@ -39,6 +39,8 @@ syns <- function(words, n_words = -1) {
                 FUN = syn,
                 n_words)
 
-  setNames(res, words)
+  names(res) <- words
+
+  res
 
 }

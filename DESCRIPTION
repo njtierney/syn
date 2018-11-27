@@ -18,5 +18,3 @@ Suggests:
     glue,
     covr,
     testthat
-Imports: 
-    stats

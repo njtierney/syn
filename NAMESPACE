@@ -2,4 +2,3 @@
 
 export(syn)
 export(syns)
-importFrom(stats,setNames)

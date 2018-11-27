@@ -31,5 +31,5 @@ It's main functions are:
 \item \code{\link[=syns]{syns()}}
 }
 
-Learn more about visdat at \url{syn.njtierney.com}
+Learn more about syn at \url{syn.njtierney.com}
 }

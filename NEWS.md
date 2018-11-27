@@ -1,3 +1,7 @@
+# syn 0.0.0.9930
+
+* Reduce the dependencies down to none!
+
 # syn 0.0.0.9920
 
 * Reduce the dependencies down to only the `stats` package.

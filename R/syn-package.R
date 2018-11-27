@@ -10,11 +10,9 @@
 #'   \item [syns()]
 #' }
 #'
-#' Learn more about visdat at \url{syn.njtierney.com}
+#' Learn more about syn at \url{syn.njtierney.com}
 #' @name syn
 #' @docType package
-#' @importFrom stats setNames
 NULL
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("."))
-globalVariables(c("setNames"))
