@@ -2,3 +2,4 @@ data-raw/words.txt
 .Rproj.user
 .Rhistory
 .RData
+*.DS_Store

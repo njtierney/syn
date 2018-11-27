@@ -12,6 +12,7 @@
 <script src="pkgdown.js"></script><meta property="og:title" content="Creates Synonyms From Target Words">
 <meta property="og:description" content="Generates synoynms from a given word drawing from a synonym list
     from the 'moby' project.">
+<meta property="og:image" content="http://syn.njtierney.com/logo.png">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -74,7 +75,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="syn" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#syn" class="anchor"></a>syn</h1></div>
+<a href="#syn" class="anchor"></a>syn <img src="reference/figures/logo.png" align="right" height="140/">
+</h1></div>
 
 <p><code>syn</code> is a <strong>zero dependency</strong> R package that lists synonyms.</p>
 <div id="example-synonyms-for-cool" class="section level2">
@@ -95,14 +97,14 @@
 <p>Wow, there are a lot! How many are there?</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">length</span>(syn_cool)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; [1] 618</span></a></code></pre></div>
-<p>Wow! There are 618 synonyms for cool. That’s…standoffish, I guess.</p>
+<p>Wow! There are 618 synonyms for cool. That’s…heartless, I guess.</p>
 <p>You can also provide it a number of words to return with the <code>n_words</code> argument, which will randomly select the number of words given</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/syn.html">syn</a></span>(<span class="st">"awesome"</span>, <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; [1] "aggrandized"</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; [1] "magnified"</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="reference/syn.html">syn</a></span>(<span class="st">"awesome"</span>, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; [1] "inviolable" "vast"</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; [1] "inexpressible" "affecting"</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw"><a href="reference/syn.html">syn</a></span>(<span class="st">"awesome"</span>, <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] "ghastly"   "weighty"   "excellent" "bulky"     "monster"</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] "stupefying" "cosmic"     "enthroned"  "sacred"     "wondrous"</span></a></code></pre></div>
 </div>
 <div id="example-creating-a-sentence" class="section level2">
 <h2 class="hasAnchor">
@@ -112,18 +114,18 @@
 <a class="sourceLine" id="cb4-2" data-line-number="2">glue<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"This is really cool!"</span>)</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; This is really cool!</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">glue<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"This is really {syn('cool', 1)}!"</span>)</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; This is really emotionally dead!</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; This is really arrest!</span></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">glue<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"This is really {syn('cool', 10)}!"</span>)</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; This is really restraint!</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; This is really glorious!</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; This is really stable equilibrium!</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; This is really put off!</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; This is really sharpness!</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; This is really repress!</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; This is really constrain!</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; This is really reposing!</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; This is really deflect!</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; This is really moldering!</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; This is really tough!</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; This is really unamiable!</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; This is really coldhearted!</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; This is really gentle!</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; This is really slow down!</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; This is really unabashed!</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; This is really solidity!</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; This is really repel!</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; This is really appease!</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; This is really guarded!</span></a></code></pre></div>
 </div>
 <div id="using-multiple-words-with-syns" class="section level2">
 <h2 class="hasAnchor">
@@ -139,15 +141,16 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/syns.html">syns</a></span>(<span class="kw">c</span>(<span class="st">"good"</span>, <span class="st">"evil"</span>),</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">     <span class="dt">n_words =</span>  <span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt; $good</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;  [1] "seemly"           "assuredly"        "justified"       </span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt;  [4] "belongings"       "gratifying"       "unchanging"      </span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;  [7] "of happy portent" "handy"            "freight"         </span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; [10] "uprighteous"     </span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt; $evil</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  [1] "vice"         "bother"       "satanism"     "mischief"    </span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  [5] "inexpedient"  "unforgivable" "havoc"        "off-color"   </span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  [9] "scandal"      "flagitious"</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;  [1] "royal"        "manly"        "well-founded" "legal"       </span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt;  [5] "outstanding"  "wise"         "really"       "esteemed"    </span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;  [9] "golden"       "unvarnished" </span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt; $evil</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt;  [1] "crime against humanity" "threatening"           </span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  [3] "inferior"               "repugnant"             </span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  [5] "unseemly"               "unsaintliness"         </span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  [7] "improper"               "tort"                  </span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;  [9] "agony"                  "ungoodness"</span></a></code></pre></div>
 </div>
 <div id="future-work" class="section level2">
 <h2 class="hasAnchor">

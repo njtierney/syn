@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# syn
+# syn <img src="man/figures/logo.png" align="right" height=140/>
 
 [![Travis build
 status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor
@@ -37,18 +37,19 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…contumelious, I guess.
+Wow\! There are 618 synonyms for cool. That’s…quiet mind, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "aggrandized"
+#> [1] "untouchable"
 syn("awesome", 2)
-#> [1] "deified"     "untouchable"
+#> [1] "mysterious" "incredible"
 syn("awesome", 5)
-#> [1] "elevated" "fell"     "sainted"  "mighty"   "horrid"
+#> [1] "overwhelming"  "enormous"      "imposing"      "massy"        
+#> [5] "awe-inspiring"
 ```
 
 ## Example: Creating a sentence
@@ -61,18 +62,18 @@ of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really suppressed!
-glue::glue("This is really {syn('cool', 10)}!")
-#> This is really imperturbation!
 #> This is really resting!
-#> This is really passionless!
-#> This is really rational!
-#> This is really stolid!
-#> This is really fab!
-#> This is really autistic!
-#> This is really bridle!
-#> This is really sane!
-#> This is really undumbfounded!
+glue::glue("This is really {syn('cool', 10)}!")
+#> This is really crispness!
+#> This is really unloving!
+#> This is really inimical!
+#> This is really frigidity!
+#> This is really out of touch!
+#> This is really meden agan!
+#> This is really unexpansive!
+#> This is really heartless!
+#> This is really toning!
+#> This is really retrench!
 ```
 
 ## Using multiple words with `syns`
@@ -95,14 +96,16 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "up to"          "most assuredly" "minimal"        "kind"          
-#>  [5] "resourceful"    "principled"     "superior"       "enjoyable"     
-#>  [9] "tenderhearted"  "grateful"      
+#>  [1] "welcome"       "omniscient"    "allowable"     "agreeable"    
+#>  [5] "encomiastic"   "warranted"     "proper"        "legal"        
+#>  [9] "yes sirree"    "well and good"
 #> 
 #> $evil
-#>  [1] "heinous"        "trying"         "iniquity"       "unskillful"    
-#>  [5] "unvirtuousness" "heavy sin"      "nefariousness"  "dire"          
-#>  [9] "infelicitous"   "dreadful"
+#>  [1] "genocide"               "crime against humanity"
+#>  [3] "Loki"                   "ghastly"               
+#>  [5] "catty"                  "threatening"           
+#>  [7] "curse"                  "repulsive"             
+#>  [9] "obscene"                "unpropitious"
 ```
 
 ## Future Work
