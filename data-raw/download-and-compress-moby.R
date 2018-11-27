@@ -3,6 +3,7 @@ suppressPackageStartupMessages({
   library(dplyr)
 })
 
+
 # Grab the moby words list if not already downloaded
 moby_words_filename <- here::here("data-raw", "moby-words.txt")
 
@@ -33,4 +34,9 @@ words_syn <- purrr::set_names(words_split, purrr::map_chr(words_split, 1))
 words_idx <- words_syn %>% purrr::map(~which(all_words %in% .x))
 
 
-usethis::use_data(all_words, words_idx, compress = 'xz', internal = TRUE, overwrite = TRUE)
+# Generate the antonyms
+source('data-raw/create-r-antonyms-data.R')
+
+
+# Save all
+usethis::use_data(all_words, words_idx, words_ant, compress = 'xz', internal = TRUE, overwrite = TRUE)
