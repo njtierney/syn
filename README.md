@@ -1,53 +1,109 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-syn
-===
+
+# syn
 
 The goal of syn is to provide two main functions:
 
--   `syn` - generate synonyms
--   `ant` - generate antonyms (needs work).
+  - `syn`, which generates synonyms
+  - `ant`, which generates antonyms
 
-That is it.
+Currently only `syn` is working, `ant`, will be developed in the future.
 
-Example
--------
+## Synonyms for “cool”
 
-This is a basic example which shows you how to solve a common problem:
+The `syn` function returns all synonyms for a given word.
+
+Let’s look at synonyms for “cool”:
 
 ``` r
 library(syn)
 
-## basic example code
-synonyms <- syn("cool") 
+syn_cool <- syn("cool")
 
-# which is better? 
-paste0("This is really cool!") 
-#> [1] "This is really cool!"
-# OR 
-paste0("This is really ", synonyms[1:10], "!")
-#>  [1] "This is really cool!"                 
-#>  [2] "This is really Buddha-like composure!"
-#>  [3] "This is really Laodicean!"            
-#>  [4] "This is really OK!"                   
-#>  [5] "This is really Olympian!"             
-#>  [6] "This is really Oriental calm!"        
-#>  [7] "This is really abate!"                
-#>  [8] "This is really abnegation!"           
-#>  [9] "This is really above all that!"       
-#> [10] "This is really absolute zero!"
+head(syn_cool)
+#> [1] "cool"                  "Buddha-like composure" "Laodicean"            
+#> [4] "OK"                    "Olympian"              "Oriental calm"
+tail(syn_cool)
+#> [1] "withhold"       "without nerves" "wizard"         "wonderless"    
+#> [5] "wonderlessness" "zealless"
 ```
 
-It is also possible to obtain the synonyms for multiple words in one go and select a random sample.
+Wow, there are a lot\! How many are there?
 
 ``` r
-syns(c("good", "evil"), 10)
+length(syn_cool)
+#> [1] 618
+```
+
+Wow\! There are 618 synonyms for cool. That’s…aguey, I guess.
+
+## Set the number of words to return
+
+You can also provide it a number of words to return with the `n_words`
+argument, which will randomly select the number of words given
+
+``` r
+syn("awesome", 1)
+#> [1] "fearful"
+syn("awesome", 2)
+#> [1] "mighty"   "infinite"
+syn("awesome", 5)
+#> [1] "high and mighty" "big"             "awesome"         "titanic"        
+#> [5] "fearsome"
+```
+
+OK cool, let’s use these in a sentence, using the `glue` package.
+
+## Example: Creating a sentence
+
+Which of these better?
+
+``` r
+
+glue::glue("This is really cool!")
+#> This is really cool!
+glue::glue("This is really {syn('cool', 1)}!")
+#> This is really chilly!
+glue::glue("This is really {syn('cool', 10)}!")
+#> This is really knock off!
+#> This is really imperturbability!
+#> This is really detached!
+#> This is really insolent!
+#> This is really prohibit!
+#> This is really liquidate!
+#> This is really tinctorial!
+#> This is really pragmatic!
+#> This is really glorious!
+#> This is really half-frozen!
+```
+
+## Using multiple words
+
+You can generate synonyms for multiple words with the `syns` function.
+This takes a vector of words, returning a named list
+
+``` r
+syns_good_evil <- syns(c("good", "evil"))
+str(syns_good_evil)
+#> List of 2
+#>  $ good: chr [1:667] "good" "Christian" "Christlike" "Christly" ...
+#>  $ evil: chr [1:365] "evil" "Loki" "Nemesis" "Set" ...
+```
+
+You can also provide `n_words` for `syns`, and it will return a random
+number of the words.
+
+``` r
+syns(c("good", "evil"),
+     n_words =  10)
 #> $good
-#>  [1] "upstanding"    "kindly"        "uncolored"     "straight"     
-#>  [5] "wise"          "all-wise"      "avail"         "respected"    
-#>  [9] "softheartedly" "rewarding"    
+#>  [1] "changeless"     "esteemed"       "noble"          "profitable"    
+#>  [5] "complimentary"  "constitutional" "yeomanly"       "minimum"       
+#>  [9] "benignant"      "effects"       
 #> 
 #> $evil
-#>  [1] "slip"          "unseemly"      "unforgivable"  "unscrupulous" 
-#>  [5] "ill-starred"   "inappropriate" "insidious"     "repulsive"    
-#>  [9] "traitorous"    "unfitting"
+#>  [1] "peccancy"     "arrant"       "ugly"         "can of worms"
+#>  [5] "ill-boding"   "malefic"      "ruinous"      "angry"       
+#>  [9] "flagitious"   "pestilence"
 ```

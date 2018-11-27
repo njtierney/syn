@@ -1,7 +1,5 @@
 ---
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -18,30 +16,70 @@ knitr::opts_chunk$set(
 
 The goal of syn is to provide two main functions:
 
-- `syn` - generate synonyms
-- `ant` - generate antonyms (needs work).
+- `syn`, which generates synonyms
+- `ant`, which generates antonyms
 
-That is it.
+Currently only `syn` is working, `ant`, will be developed in the future.
 
+## Synonyms for "cool"
 
-## Example
+The `syn` function returns all synonyms for a given word.
 
-This is a basic example which shows you how to solve a common problem:
+Let's look at synonyms for "cool":
 
 ```{r example, message = FALSE, warnings = FALSE}
 library(syn)
 
-## basic example code
-synonyms <- syn("cool") 
+syn_cool <- syn("cool")
 
-# which is better? 
-paste0("This is really cool!") 
-# OR 
-paste0("This is really ", synonyms[1:10], "!")
+head(syn_cool)
+tail(syn_cool)
 ```
 
-It is also possible to obtain the synonyms for multiple words in one go and select a random sample. 
+Wow, there are a lot! How many are there?
 
-```{r example2}
-syns(c("good", "evil"), 10)
+```{r length-syn-cool}
+length(syn_cool)
 ```
+
+Wow! There are `r length(syn_cool)` synonyms for cool. That's...`r syn("cool", 1)`, I guess.
+
+## Set the number of words to return
+
+You can also provide it a number of words to return with the `n_words` argument, which will randomly select the number of words given
+
+```{r syn-awesome-one}
+syn("awesome", 1)
+syn("awesome", 2)
+syn("awesome", 5)
+```
+
+OK cool, let's use these in a sentence, using the `glue` package. 
+
+## Example: Creating a sentence
+
+Which of these better?
+
+```{r example-syn-glue}
+
+glue::glue("This is really cool!")
+glue::glue("This is really {syn('cool', 1)}!")
+glue::glue("This is really {syn('cool', 10)}!")
+```
+
+## Using multiple words
+
+You can generate synonyms for multiple words with the `syns` function. This takes a vector of words, returning a named list
+
+```{r example-syns}
+syns_good_evil <- syns(c("good", "evil"))
+str(syns_good_evil)
+```
+
+You can also provide `n_words` for `syns`, and it will return a random number of the words.
+
+```{r syns-n-words}
+syns(c("good", "evil"),
+     n_words =  10)
+```
+
