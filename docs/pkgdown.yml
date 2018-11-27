@@ -2,4 +2,7 @@ pandoc: 2.3.1
 pkgdown: 1.1.0
 pkgdown_sha: ~
 articles: []
+urls:
+  reference: http://syn.njtierney.com//reference
+  article: http://syn.njtierney.com//articles
 
