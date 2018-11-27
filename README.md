@@ -51,19 +51,19 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…fine and dandy, I guess.
+Wow\! There are 618 synonyms for cool. That’s…unaffable, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "august"
+#> [1] "astounding"
 syn("awesome", 2)
-#> [1] "spiritual"   "unspeakable"
+#> [1] "boundless"       "high and mighty"
 syn("awesome", 5)
-#> [1] "sublime"      "dreaded"      "frightening"  "unbelievable"
-#> [5] "sacred"
+#> [1] "cosmic"       "sublime"      "awful"        "time-honored"
+#> [5] "venerable"
 ```
 
 ## Example: Creating a sentence
@@ -76,18 +76,18 @@ of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really ace-high!
+#> This is really stilly!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really via media!
-#> This is really reposeful!
-#> This is really coolness!
-#> This is really fervorless!
-#> This is really uncongenial!
-#> This is really contain!
-#> This is really restful!
-#> This is really lenity!
-#> This is really lukewarm!
-#> This is really tingent!
+#> This is really calm of mind!
+#> This is really smooth!
+#> This is really glowing!
+#> This is really placid!
+#> This is really gentle!
+#> This is really soulless!
+#> This is really suppressed!
+#> This is really unresponding!
+#> This is really Olympian!
+#> This is really nonchalant!
 ```
 
 ## Using multiple words with `syns`
@@ -110,15 +110,14 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "unworldly"       "sortable"        "masterly"       
-#>  [4] "secure"          "laudable"        "sovereign"      
-#>  [7] "really"          "self-consistent" "gratifying"     
-#> [10] "merchandise"    
+#>  [1] "valid"         "tender"        "undisguised"   "humanely"     
+#>  [5] "advisable"     "favorable"     "clever"        "good-tasting" 
+#>  [9] "word-for-word" "solid"        
 #> 
 #> $evil
-#>  [1] "bother"        "corruption"    "nefariousness" "baseness"     
-#>  [5] "unmorality"    "curse"         "noxious"       "fault"        
-#>  [9] "repulsive"     "misfortune"
+#>  [1] "pest"           "besetment"      "poisonous"      "revolting"     
+#>  [5] "cataclysm"      "dire"           "unpardonable"   "inexpiable sin"
+#>  [9] "torment"        "spiteful"
 ```
 
 ## Example: Antonyms (under development)
@@ -129,19 +128,35 @@ by `ant` is small.
 
 ``` r
 ant("good")
-#> [1] NA NA
+#> [1] "bad"  "evil"
 ant("good",1)
-#> [1] NA
+#> [1] "bad"
+
+ant("strong")
+#> [1] "weak"
 ```
 
 ``` r
-ants(c("good", "evil"),
-     n_words =  10)
+ants(c("good", "evil"))
 #> $good
-#> [1] NA NA
+#> [1] "bad"  "evil"
 #> 
 #> $evil
-#> [1] NA
+#> [1] "good"
+
+ants(c("good", "evil"), n_words = 5)
+#> $good
+#> [1] "evil" "bad" 
+#> 
+#> $evil
+#> [1] "good"
+
+ants(c("strong", "weak"))
+#> $strong
+#> [1] "weak"
+#> 
+#> $weak
+#> [1] "strong"
 ```
 
 ## Code of Conduct

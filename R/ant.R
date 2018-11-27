@@ -15,13 +15,16 @@ ant <- function(word, n_words = -1) {
 
   res <- words_ant[[word]]
 
+  # return character(0) if NULL
+  if (is.null(res)) return(character(0))
+
   if (n_words > 0L && length(res) > 0L) {
     # Avoid trying to sample more words than we have.
     n_words <- min(n_words, length(res))
     res <- sample(res, n_words)
   }
 
-  all_words[res]
+  res
 
 }
 

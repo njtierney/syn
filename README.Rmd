@@ -94,11 +94,16 @@ To create antonyms, use `ant` and `ants`, which have the same inputs as `syn`. H
 ```{r ant-n-words}
 ant("good")
 ant("good",1)
+
+ant("strong")
 ```
 
 ```{r ants-n-words}
-ants(c("good", "evil"),
-     n_words =  10)
+ants(c("good", "evil"))
+
+ants(c("good", "evil"), n_words = 5)
+
+ants(c("strong", "weak"))
 ```
 
 
