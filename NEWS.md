@@ -1,3 +1,7 @@
+# syn 0.0.0.9920
+
+* Reduce the dependencies down to only the `stats` package.
+
 # syn 0.0.0.9910
 
 * Reduce the dependencies down to only `purrr`.

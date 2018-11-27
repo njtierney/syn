@@ -35,8 +35,10 @@ syn <- function(word, n_words = -1) {
 #' @export
 syns <- function(words, n_words = -1) {
 
-  res <- purrr::map(words, syn, n_words)
+  res <- lapply(X = words,
+                FUN = syn,
+                n_words)
 
-  purrr::set_names(res, words)
+  setNames(res, words)
 
 }
