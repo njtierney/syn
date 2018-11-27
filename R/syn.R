@@ -1,14 +1,16 @@
 #' Syn: Get synonyms for one word
 #'
-#' @param word character, one word you want to find synonyms for
+#' @param word character, one word you want to find synonyms for.
 #' @param n_words integer, the number of words to look for. An integer Default is all words
 #'
-#' @return synonyms of the word you entered
+#' @return synonyms of the word you entered. Returns `character(0)` if word not found.
 #'
 #' @examples
 #' # put some examples here
 #' syn("good")
 #' syn("evil", 25)
+#' # No words for spelling mistakes
+#' syn("spolling misteak")
 #' @export
 syn <- function(word, n_words = -1) {
 
@@ -29,9 +31,11 @@ syn <- function(word, n_words = -1) {
 #' @param words word, character - many words you want to find synonyms for
 #' @param n_words integer, the number of words to look for. An integer Default is all words
 #'
-#' @return named list of synonyms
+#' @return named list of synonyms. Returns `character(0)` if word not found.
 #' @examples
 #' syns(c("good", "evil"), 10)
+#' # No words for spelling mistakes
+#' syns("spolling misteak")
 #' @export
 syns <- function(words, n_words = -1) {
 

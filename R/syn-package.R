@@ -1,6 +1,6 @@
 #' syn
 #'
-#' syn provides a dependency free way to get synonyms of words.
+#' syn provides a dependency free way to get synonyms and antonyms of words.
 #'
 #' @seealso
 #'
@@ -8,6 +8,8 @@
 #' \itemize{
 #'   \item [syn()]
 #'   \item [syns()]
+#'   \item [ant()]
+#'   \item [ants()]
 #' }
 #'
 #' Learn more about syn at \url{syn.njtierney.com}

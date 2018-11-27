@@ -7,12 +7,12 @@
 ants(words, n_words = -1)
 }
 \arguments{
-\item{words}{word, character - many words you want to find antonyms for}
+\item{words}{word, character - many words you want to find antonyms.}
 
-\item{n_words}{integer, the number of words to look for. An integer Default is all words}
+\item{n_words}{integer, the number of words to look for.}
 }
 \value{
-named list of antonyms
+named list of antonyms. Returns \code{character(0)} if word not found
 }
 \description{
 Ants: Get antonyms for many words

@@ -12,11 +12,13 @@ syns(words, n_words = -1)
 \item{n_words}{integer, the number of words to look for. An integer Default is all words}
 }
 \value{
-named list of synonyms
+named list of synonyms. Returns \code{character(0)} if word not found.
 }
 \description{
 Syns: Get synonyms for many words
 }
 \examples{
 syns(c("good", "evil"), 10)
+# No words for spelling mistakes
+syns("spolling misteak")
 }

@@ -7,18 +7,19 @@
 ant(word, n_words = -1)
 }
 \arguments{
-\item{word}{character, one word you want to find antonyms for}
+\item{word}{character, one word you want to find antonyms for.}
 
-\item{n_words}{integer, the number of words to look for. An integer Default is all words}
+\item{n_words}{integer, the number of words to return.}
 }
 \value{
-antonyms of the word you entered
+antonyms of the word you entered. Returns \code{character(0)} if word not found
 }
 \description{
 Ant: Get antonyms for one word
 }
 \examples{
-# put some examples here
 ant("good")
 ant("evil", 25)
+# No words for spelling mistakes
+ant("spolling misteak")
 }

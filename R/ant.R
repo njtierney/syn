@@ -1,14 +1,15 @@
 #' Ant: Get antonyms for one word
 #'
-#' @param word character, one word you want to find antonyms for
-#' @param n_words integer, the number of words to look for. An integer Default is all words
+#' @param word character, one word you want to find antonyms for.
+#' @param n_words integer, the number of words to return.
 #'
-#' @return antonyms of the word you entered
+#' @return antonyms of the word you entered. Returns `character(0)` if word not found
 #'
 #' @examples
-#' # put some examples here
 #' ant("good")
 #' ant("evil", 25)
+#' # No words for spelling mistakes
+#' ant("spolling misteak")
 #' @export
 ant <- function(word, n_words = -1) {
 
@@ -20,16 +21,16 @@ ant <- function(word, n_words = -1) {
     res <- sample(res, n_words)
   }
 
-  res
-}
+  all_words[res]
 
+}
 
 #' Ants: Get antonyms for many words
 #'
-#' @param words word, character - many words you want to find antonyms for
-#' @param n_words integer, the number of words to look for. An integer Default is all words
+#' @param words word, character - many words you want to find antonyms.
+#' @param n_words integer, the number of words to look for.
 #'
-#' @return named list of antonyms
+#' @return named list of antonyms. Returns `character(0)` if word not found
 #' @examples
 #' ants(c("good", "evil"), 10)
 #' @export

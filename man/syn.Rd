@@ -9,26 +9,30 @@
 syn(word, n_words = -1)
 }
 \arguments{
-\item{word}{character, one word you want to find synonyms for}
+\item{word}{character, one word you want to find synonyms for.}
 
 \item{n_words}{integer, the number of words to look for. An integer Default is all words}
 }
 \value{
-synonyms of the word you entered
+synonyms of the word you entered. Returns \code{character(0)} if word not found.
 }
 \description{
-syn provides a dependency free way to get synonyms of words.
+syn provides a dependency free way to get synonyms and antonyms of words.
 }
 \examples{
 # put some examples here
 syn("good")
 syn("evil", 25)
+# No words for spelling mistakes
+syn("spolling misteak")
 }
 \seealso{
 It's main functions are:
 \itemize{
 \item \code{\link[=syn]{syn()}}
 \item \code{\link[=syns]{syns()}}
+\item \code{\link[=ant]{ant()}}
+\item \code{\link[=ants]{ants()}}
 }
 
 Learn more about syn at \url{syn.njtierney.com}
