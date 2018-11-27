@@ -22,3 +22,14 @@ test_that("syns n_words works", {
   expect_length(syns(c("cool", "evil"), 5)[[2]], 5)
 })
 
+
+test_that("syns returns 0 when it cannot find a word", {
+  expect_length(syns("xxxx"), 1)
+  expect_length(syns("xxxx")[[1]], 0)
+})
+
+test_that("syns with n_words returns 0 when it cannot find a word", {
+  expect_length(syns("xxxx", 5), 1)
+  expect_length(syns("xxxx", 5)[[1]], 0)
+})
+
