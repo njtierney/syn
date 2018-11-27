@@ -1,3 +1,5 @@
+^appveyor\.yml$
+^\.travis\.yml$
 ^data-raw$
 ^.*\.Rproj$
 ^\.Rproj\.user$

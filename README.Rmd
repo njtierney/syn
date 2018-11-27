@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
 ```
 
 # syn
+[![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)
 
 The goal of syn is to provide two main functions:
 
