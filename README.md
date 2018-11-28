@@ -7,7 +7,10 @@
 status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor
 build
 status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage
-status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
+status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project
+Status: Active – The project has reached a stable, usable state and is
+being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 `syn` is a **zero dependency** R package that lists synonyms and
 antonyms.
@@ -51,19 +54,19 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…unaffable, I guess.
+Wow\! There are 618 synonyms for cool. That’s…stable, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "astounding"
+#> [1] "aggrandized"
 syn("awesome", 2)
-#> [1] "boundless"       "high and mighty"
+#> [1] "incredible" "sacrosanct"
 syn("awesome", 5)
-#> [1] "cosmic"       "sublime"      "awful"        "time-honored"
-#> [5] "venerable"
+#> [1] "immortalized" "stupendous"   "king-size"    "reverend"    
+#> [5] "massive"
 ```
 
 ## Example: Creating a sentence
@@ -76,18 +79,18 @@ of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really stilly!
+#> This is really purposive!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really calm of mind!
-#> This is really smooth!
-#> This is really glowing!
-#> This is really placid!
-#> This is really gentle!
-#> This is really soulless!
-#> This is really suppressed!
-#> This is really unresponding!
-#> This is really Olympian!
-#> This is really nonchalant!
+#> This is really distant!
+#> This is really sound!
+#> This is really half-frozen!
+#> This is really even out!
+#> This is really level-headed!
+#> This is really introverted!
+#> This is really undemonstrative!
+#> This is really lukewarm!
+#> This is really unflappable!
+#> This is really commonsense!
 ```
 
 ## Using multiple words with `syns`
@@ -110,14 +113,16 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "valid"         "tender"        "undisguised"   "humanely"     
-#>  [5] "advisable"     "favorable"     "clever"        "good-tasting" 
-#>  [9] "word-for-word" "solid"        
+#>  [1] "kindly-disposed" "competent"       "good for"       
+#>  [4] "cordial"         "expert"          "thorough"       
+#>  [7] "unimitated"      "hygeian"         "enough"         
+#> [10] "amen"           
 #> 
 #> $evil
-#>  [1] "pest"           "besetment"      "poisonous"      "revolting"     
-#>  [5] "cataclysm"      "dire"           "unpardonable"   "inexpiable sin"
-#>  [9] "torment"        "spiteful"
+#>  [1] "of evil portent" "reprehensible"   "defilement"     
+#>  [4] "repulsive"       "unchastity"      "delinquent"     
+#>  [7] "carnality"       "sinful"          "destructive"    
+#> [10] "angry"
 ```
 
 ## Example: Antonyms (under development)
@@ -130,7 +135,7 @@ by `ant` is small.
 ant("good")
 #> [1] "bad"  "evil"
 ant("good",1)
-#> [1] "bad"
+#> [1] "evil"
 
 ant("strong")
 #> [1] "weak"
