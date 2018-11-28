@@ -2,5 +2,7 @@
 
 export(ant)
 export(ants)
+export(hom)
+export(homs)
 export(syn)
 export(syns)

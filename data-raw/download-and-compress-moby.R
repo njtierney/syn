@@ -37,6 +37,8 @@ words_idx <- words_syn %>% purrr::map(~which(all_words %in% .x))
 # Generate the antonyms
 source('data-raw/create-r-antonyms-data.R')
 
+# Create homophones
+source(here::here("data-raw", 'create-homophones.R'))
 
 # Save all
-usethis::use_data(all_words, words_idx, words_ant, compress = 'xz', internal = TRUE, overwrite = TRUE)
+usethis::use_data(all_words, words_idx, words_ant, all_phons, compress = 'xz', internal = TRUE, overwrite = TRUE)
