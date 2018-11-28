@@ -1,7 +1,7 @@
 context("test-hom")
 
 test_that("hom pulls the right number of words for cool", {
-  expect_length(hom("cool"), 69)
+  expect_length(hom("cool", c('dbm', 'dbmalt', 'soundex')), 69)
 })
 
 test_that("hom returns character(0) when it cannot find a word", {
