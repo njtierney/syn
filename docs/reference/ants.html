@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Syns: Get synonyms for many words — syns • syn</title>
+<title>Ants: Get antonyms for many words — ants • syn</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Syns: Get synonyms for many words — syns" />
+<meta property="og:title" content="Ants: Get antonyms for many words — ants" />
 
-<meta property="og:description" content="Syns: Get synonyms for many words" />
+<meta property="og:description" content="Ants: Get antonyms for many words" />
 
 <meta property="og:image" content="http://syn.njtierney.com/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -102,49 +102,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Syns: Get synonyms for many words</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ropenscilabs/syn/blob/master/R/syn.R'><code>R/syn.R</code></a></small>
-    <div class="hidden name"><code>syns.Rd</code></div>
+    <h1>Ants: Get antonyms for many words</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ropenscilabs/syn/blob/master/R/ant.R'><code>R/ant.R</code></a></small>
+    <div class="hidden name"><code>ants.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Syns: Get synonyms for many words</p>
+    <p>Ants: Get antonyms for many words</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>syns</span>(<span class='no'>words</span>, <span class='kw'>n_words</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</pre>
+    <pre class="usage"><span class='fu'>ants</span>(<span class='no'>words</span>, <span class='kw'>n_words</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>words</th>
-      <td><p>word, character - many words you want to find synonyms for</p></td>
+      <td><p>word, character - many words you want to find antonyms.</p></td>
     </tr>
     <tr>
       <th>n_words</th>
-      <td><p>integer, the number of words to look for. An integer Default is all words</p></td>
+      <td><p>integer, the number of words to look for.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>named list of synonyms. Returns <code>character(0)</code> if word not found.</p>
+    <p>named list of antonyms. Returns <code>character(0)</code> if word not found</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>syns</span>(<span class='fu'>c</span>(<span class='st'>"good"</span>, <span class='st'>"evil"</span>), <span class='fl'>10</span>)</div><div class='output co'>#&gt; $good
-#&gt;  [1] "salutary"     "all-powerful" "delicious"    "favorable"    "prosperity"  
-#&gt;  [6] "law-revering" "immaculate"   "scrumptious"  "warmhearted"  "considerable"
+    <pre class="examples"><div class='input'><span class='fu'>ants</span>(<span class='fu'>c</span>(<span class='st'>"good"</span>, <span class='st'>"evil"</span>), <span class='fl'>10</span>)</div><div class='output co'>#&gt; $good
+#&gt; [1] "evil" "bad" 
 #&gt; 
 #&gt; $evil
-#&gt;  [1] "detrimental"      "pollution"        "lapse"            "outrage"         
-#&gt;  [5] "peck of troubles" "boding"           "shame"            "shameful"        
-#&gt;  [9] "visitation"       "vice"            
-#&gt; </div><div class='input'><span class='co'># No words for spelling mistakes</span>
-<span class='fu'>syns</span>(<span class='st'>"spolling misteak"</span>)</div><div class='output co'>#&gt; $`spolling misteak`
-#&gt; character(0)
+#&gt; [1] "good"
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

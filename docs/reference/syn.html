@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="syn — syn" />
 
-<meta property="og:description" content="syn provides a dependency free way to get synonyms of words." />
+<meta property="og:description" content="syn provides a dependency free way to get synonyms and antonyms of words." />
 
 <meta property="og:image" content="http://syn.njtierney.com/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">syn</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9930</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.1</span>
       </span>
     </div>
 
@@ -109,7 +109,7 @@
 
     <div class="ref-description">
     
-    <p>syn provides a dependency free way to get synonyms of words.</p>
+    <p>syn provides a dependency free way to get synonyms and antonyms of words.</p>
     
     </div>
 
@@ -120,7 +120,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>word</th>
-      <td><p>character, one word you want to find synonyms for</p></td>
+      <td><p>character, one word you want to find synonyms for.</p></td>
     </tr>
     <tr>
       <th>n_words</th>
@@ -130,13 +130,15 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>synonyms of the word you entered</p>
+    <p>synonyms of the word you entered. Returns <code>character(0)</code> if word not found.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>It's main functions are:</p><ul>
 <li><p><code>syn()</code></p></li>
 <li><p><code><a href='syns.html'>syns()</a></code></p></li>
+<li><p><code><a href='ant.html'>ant()</a></code></p></li>
+<li><p><code><a href='ants.html'>ants()</a></code></p></li>
 </ul></div>
     <div class='dont-index'><p>Learn more about syn at <a href='syn.njtierney.com'>syn.njtierney.com</a></p></div>
     
@@ -365,11 +367,16 @@
 #&gt; [658] "yea"                  "yeah"                 "yeomanly"            
 #&gt; [661] "yep"                  "yes"                  "yes indeed"          
 #&gt; [664] "yes indeedy"          "yes sir"              "yes sirree"          
-#&gt; [667] "yummy"               </div><div class='input'><span class='fu'>syn</span>(<span class='st'>"evil"</span>, <span class='fl'>25</span>)</div><div class='output co'>#&gt;  [1] "black"       "trouble"     "not done"    "curse"       "abominable" 
-#&gt;  [6] "infamy"      "invalid"     "error"       "repugnant"   "shameful"   
-#&gt; [11] "uncleanness" "deadly"      "anxiety"     "fateful"     "horrible"   
-#&gt; [16] "deleterious" "hideous"     "bane"        "hateful"     "unsuitable" 
-#&gt; [21] "dreadful"    "pain"        "profligacy"  "degradation" "unseemly"   </div></pre>
+#&gt; [667] "yummy"               </div><div class='input'><span class='fu'>syn</span>(<span class='st'>"evil"</span>, <span class='fl'>25</span>)</div><div class='output co'>#&gt;  [1] "abominable"        "infelicitous"      "knavish"          
+#&gt;  [4] "evil"              "ruin"              "sin of commission"
+#&gt;  [7] "unfavorable"       "deadly sin"        "anxiety"          
+#&gt; [10] "felonious"         "horrid"            "delinquency"      
+#&gt; [13] "wantonness"        "bane"              "headache"         
+#&gt; [16] "unworthy"          "dreary"            "peccancy"         
+#&gt; [19] "rank"              "degradation"       "untoward"         
+#&gt; [22] "vicious"           "awful"             "lapse"            
+#&gt; [25] "peccant"          </div><div class='input'><span class='co'># No words for spelling mistakes</span>
+<span class='fu'>syn</span>(<span class='st'>"spolling misteak"</span>)</div><div class='output co'>#&gt; character(0)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
