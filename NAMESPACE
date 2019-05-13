@@ -2,5 +2,6 @@
 
 export(ant)
 export(ants)
+export(n_words)
 export(syn)
 export(syns)

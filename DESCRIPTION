@@ -1,6 +1,6 @@
 Package: syn
 Title: Creates Synonyms From Target Words
-Version: 0.0.1
+Version: 0.0.1.9000
 Authors@R: c(person("Nicholas", "Tierney", email = "nicholas.tierney@gmail.com", role = c("aut", "cre")), 
              person("Amy", "Stringer", email = "amy.stringer@me.com", role = c("aut")),
              person("Mike", "Cheng", email = "mikefc@coolbutuseless.com", role = c("aut")),
@@ -19,4 +19,4 @@ Roxygen: list(markdown = TRUE)
 Suggests: 
     glue,
     covr,
-    testthat
+    testthat (>= 2.1.0)

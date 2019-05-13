@@ -1,3 +1,8 @@
+# syn 0.0.1.9000
+
+* Implemented `n_words` to count the number of words in a string. This can be
+  useful for subsetting your synonyms.
+
 # syn 0.0.1 "Actual Thing"
 
 * Implemented `ant` and `ants` functions using imported antonym dataset from wordnet - see cool work by Mike Cheng: [#20](https://github.com/ropenscilabs/syn/pull/20).

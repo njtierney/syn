@@ -107,6 +107,19 @@ ants(c("good", "evil"), n_words = 5)
 ants(c("strong", "weak"))
 ```
 
+## Example: Filtering by the number of words in a synonym
+
+Let's say that you want to filter something down to those synonyms that only contain one word. You can use the `n_words` argument, which calculates the number of words for each 
+
+```{r one-word-only}
+syn_end <- syn("end")
+
+n_words(syn_end)
+syn_end_l1 <- syn_end[n_words(syn_end) <= 1]
+syn_end_l1
+```
+
+
 
 ## Code of Conduct
 

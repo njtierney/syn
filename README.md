@@ -54,19 +54,18 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…stable, I guess.
+Wow\! There are 618 synonyms for cool. That’s…strained, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "aggrandized"
+#> [1] "inexpressible"
 syn("awesome", 2)
-#> [1] "incredible" "sacrosanct"
+#> [1] "divine"  "immense"
 syn("awesome", 5)
-#> [1] "immortalized" "stupendous"   "king-size"    "reverend"    
-#> [5] "massive"
+#> [1] "gigantic" "exalted"  "huge"     "dreadful" "gruesome"
 ```
 
 ## Example: Creating a sentence
@@ -79,18 +78,18 @@ of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really purposive!
+#> This is really hold fast!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really distant!
-#> This is really sound!
-#> This is really half-frozen!
-#> This is really even out!
-#> This is really level-headed!
-#> This is really introverted!
-#> This is really undemonstrative!
-#> This is really lukewarm!
-#> This is really unflappable!
-#> This is really commonsense!
+#> This is really chilliness!
+#> This is really premeditated!
+#> This is really stillish!
+#> This is really sober!
+#> This is really assassinate!
+#> This is really assured!
+#> This is really mollify!
+#> This is really reposeful!
+#> This is really inexcitable!
+#> This is really icy calm!
 ```
 
 ## Using multiple words with `syns`
@@ -113,16 +112,15 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "kindly-disposed" "competent"       "good for"       
-#>  [4] "cordial"         "expert"          "thorough"       
-#>  [7] "unimitated"      "hygeian"         "enough"         
-#> [10] "amen"           
+#>  [1] "champion"          "merchandise"       "crack"            
+#>  [4] "glorious"          "behoof"            "assuredly"        
+#>  [7] "spiritual"         "personal property" "superb"           
+#> [10] "merciful"         
 #> 
 #> $evil
-#>  [1] "of evil portent" "reprehensible"   "defilement"     
-#>  [4] "repulsive"       "unchastity"      "delinquent"     
-#>  [7] "carnality"       "sinful"          "destructive"    
-#> [10] "angry"
+#>  [1] "unprincipled" "crying evil"  "disaster"     "abnormal"    
+#>  [5] "amorality"    "grievance"    "wantonness"   "foulness"    
+#>  [9] "Typhon"       "unpromising"
 ```
 
 ## Example: Antonyms (under development)
@@ -135,7 +133,7 @@ by `ant` is small.
 ant("good")
 #> [1] "bad"  "evil"
 ant("good",1)
-#> [1] "evil"
+#> [1] "bad"
 
 ant("strong")
 #> [1] "weak"
@@ -162,6 +160,165 @@ ants(c("strong", "weak"))
 #> 
 #> $weak
 #> [1] "strong"
+```
+
+## Example: Filtering by the number of words in a synonym
+
+Let’s say that you want to filter something down to those synonyms that
+only contain one word. You can use the `n_words` argument, which
+calculates the number of words for each
+
+``` r
+syn_end <- syn("end")
+
+n_words(syn_end)
+#>   [1] 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 2 1 1 2 1 1 1 1 1 1 1 1 1 1 3 3 2 1 1 3
+#>  [36] 2 2 2 1 1 2 2 3 2 1 1 1 2 2 1 1 2 2 1 1 2 2 1 1 1 2 1 2 2 3 1 1 1 1 1
+#>  [71] 1 3 1 1 1 1 1 1 1 2 2 1 2 1 1 1 2 2 1 1 1 1 1 2 2 2 3 3 1 1 1 1 1 1 1
+#> [106] 1 1 1 2 1 1 1 1 1 3 1 1 1 1 1 1 1 2 3 2 2 1 2 1 2 1 1 1 1 2 1 1 3 1 1
+#> [141] 1 2 1 1 1 1 3 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 2 1 1 2 3 2 3 1 1
+#> [176] 1 2 1 3 1 3 3 2 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 1 2 2 2 1 1 1 1 2 2 2 2
+#> [211] 1 1 1 1 1 3 1 1 2 2 1 1 1 1 1 1 1 1 1 3 1 2 2 1 1 1 1 2 3 3 2 3 2 1 1
+#> [246] 1 1 1 2 1 2 1 1 1 1 1 3 3 1 1 2 2 1 1 1 1 3 1 1 1 1 1 1 1 3 1 1 1 1 1
+#> [281] 3 2 2 2 2 2 2 3 2 2 1 2 1 1 1 1 1 2 1 3 1 1 1 3 1 2 2 1 1 3 3 1 1 1 1
+#> [316] 1 1 1 1 1 1 1 1 1 1 2 1 3 1 2 1 3 1 3 2 1 1 1 1 1 2 1 1 1 1 1 1 2 1 2
+#> [351] 2 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 3 1 1 1 2 2 3 3 3 1 1 1 1
+#> [386] 1 1 1 1 1 1 1 1 1 3 1 1 1 1 1 1 1 1 3 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 1
+#> [421] 1 1 2 1 1 1 1 1 1 1 1 1 3 3 1 3 1 1 1 1 1 1 2 1 1 1 1 1 1 2 1 1 1 1 1
+#> [456] 1 1 2 2 1 1 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 3 1 1 1 1 2 2
+#> [491] 1 2 1 1 1 1 2 1 1 1 2 1 2 1 1 1 2 2 2 1 1 2 1 2 1 2 1 1 1 1 1 1 1 2 1
+#> [526] 1 2 1 1 1 1 1 1 3 3 2 1 1 2 2 1 1 2 1
+syn_end_l1 <- syn_end[n_words(syn_end) <= 1]
+syn_end_l1
+#>   [1] "abandon"         "abort"           "accomplishment" 
+#>   [4] "acme"            "afterglow"       "afterimage"     
+#>   [7] "aim"             "all"             "allotment"      
+#>  [10] "allowance"       "annihilate"      "annihilation"   
+#>  [13] "answer"          "apogee"          "archer"         
+#>  [16] "arrest"          "astrology"       "athlete"        
+#>  [19] "attend"          "balance"         "ballplayer"     
+#>  [22] "bane"            "baseballer"      "baseman"        
+#>  [25] "batter"          "battery"         "belay"          
+#>  [28] "bell"            "bit"             "bite"           
+#>  [31] "borderline"      "bound"           "boundary"       
+#>  [34] "bourn"           "bowman"          "budget"         
+#>  [37] "butt"            "by-end"          "by-purpose"     
+#>  [40] "cancel"          "cap"             "catastrophe"    
+#>  [43] "catcher"         "cease"           "ceiling"        
+#>  [46] "center"          "cessation"       "chaff"          
+#>  [49] "check"           "checkmate"       "chip"           
+#>  [52] "chloroform"      "chunk"           "circumscription"
+#>  [55] "climax"          "clip"            "clipping"       
+#>  [58] "close"           "closing"         "closure"        
+#>  [61] "coach"           "coda"            "collop"         
+#>  [64] "commission"      "compass"         "competitor"     
+#>  [67] "complete"        "completing"      "completion"     
+#>  [70] "conclude"        "conclusion"      "confine"        
+#>  [73] "confines"        "constellation"   "consummation"   
+#>  [76] "contingent"      "cracking"        "cricketer"      
+#>  [79] "crown"           "crumb"           "culminate"      
+#>  [82] "culmination"     "cup"             "curtains"       
+#>  [85] "cut"             "cutoff"          "cutting"        
+#>  [88] "deadline"        "deadlock"        "deal"           
+#>  [91] "death"           "deathblow"       "debris"         
+#>  [94] "decease"         "decipherment"    "decoding"       
+#>  [97] "delimitation"    "demise"          "denouement"     
+#> [100] "departure"       "desist"          "desistance"     
+#> [103] "destination"     "destiny"         "destroy"        
+#> [106] "desuetude"       "determinant"     "determination"  
+#> [109] "determine"       "detritus"        "develop"        
+#> [112] "die"             "disappear"       "discontinuance" 
+#> [115] "discontinuation" "discontinue"     "disentanglement"
+#> [118] "dispatch"        "dissolution"     "dividend"       
+#> [121] "dole"            "dollop"          "doom"           
+#> [124] "dying"           "end"             "endgame"        
+#> [127] "ending"          "ensue"           "eventuate"      
+#> [130] "execute"         "exit"            "expiration"     
+#> [133] "expire"          "explanation"     "exterminate"    
+#> [136] "extinction"      "extinguishment"  "extreme"        
+#> [139] "extremity"       "fare"            "fatality"       
+#> [142] "fate"            "filings"         "finale"         
+#> [145] "finality"        "finalize"        "finding"        
+#> [148] "finding-out"     "finis"           "finish"         
+#> [151] "finishing"       "floor"           "follow"         
+#> [154] "footballer"      "foredoom"        "fortune"        
+#> [157] "fossil"          "fragment"        "Friday"         
+#> [160] "frontier"        "future"          "game"           
+#> [163] "games-player"    "gamester"        "go"             
+#> [166] "goal"            "gob"             "gobbet"         
+#> [169] "going"           "grave"           "guard"          
+#> [172] "gun"             "half"            "halt"           
+#> [175] "halver"          "hedge"           "helping"        
+#> [178] "hold"            "holdover"        "hunk"           
+#> [181] "husks"           "immolate"        "inevitability"  
+#> [184] "infielder"       "interest"        "interface"      
+#> [187] "interpretation"  "issue"           "jock"           
+#> [190] "jumper"          "kill"            "kismet"         
+#> [193] "knell"           "leaving"         "leavings"       
+#> [196] "leftovers"       "limen"           "limit"          
+#> [199] "limitation"      "line"            "lineman"        
+#> [202] "liquidate"       "lockout"         "lot"            
+#> [205] "lump"            "lynch"           "march"          
+#> [208] "mark"            "martyr"          "martyrize"      
+#> [211] "maturation"      "maturity"        "maximum"        
+#> [214] "measure"         "meed"            "mess"           
+#> [217] "mete"            "modicum"         "moiety"         
+#> [220] "moira"           "morsel"          "nip"            
+#> [223] "object"          "objective"       "offscourings"   
+#> [226] "orts"            "outcome"         "outfield"       
+#> [229] "outfielder"      "paring"          "parings"        
+#> [232] "part"            "particle"        "parting"        
+#> [235] "pass"            "passing"         "payoff"         
+#> [238] "peak"            "percentage"      "perfect"        
+#> [241] "perfection"      "period"          "perish"         
+#> [244] "perishing"       "perorate"        "piece"          
+#> [247] "pinnacle"        "planets"         "player"         
+#> [250] "poison"          "poloist"         "portion"        
+#> [253] "prey"            "proportion"      "prove"          
+#> [256] "pugilist"        "purge"           "pursuit"        
+#> [259] "quantum"         "quarry"          "quarterback"    
+#> [262] "quietus"         "quintain"        "quit"           
+#> [265] "quota"           "racer"           "rags"           
+#> [268] "rake-off"        "rasher"          "ration"         
+#> [271] "reason"          "refrain"         "refuse"         
+#> [274] "release"         "relics"          "relinquish"     
+#> [277] "remainder"       "remains"         "remnant"        
+#> [280] "renounce"        "residue"         "residuum"       
+#> [283] "resolution"      "resolve"         "resolving"      
+#> [286] "rest"            "result"          "reward"         
+#> [289] "riddling"        "ripeness"        "roach"          
+#> [292] "rubbish"         "ruins"           "rump"           
+#> [295] "sacrifice"       "sawdust"         "scoop"          
+#> [298] "scourings"       "scrap"           "scraps"         
+#> [301] "scratch"         "scrub"           "segment"        
+#> [304] "shadow"          "shard"           "share"          
+#> [307] "shaving"         "shavings"        "shiver"         
+#> [310] "shred"           "skater"          "slaughter"      
+#> [313] "slay"            "sleep"           "slice"          
+#> [316] "sliver"          "smithereen"      "snack"          
+#> [319] "snatch"          "snip"            "snippet"        
+#> [322] "solution"        "solving"         "splinter"       
+#> [325] "sport"           "sportsman"       "stake"          
+#> [328] "stalemate"       "stand"           "standoff"       
+#> [331] "standstill"      "stars"           "start"          
+#> [334] "starve"          "stay"            "stitch"         
+#> [337] "stock"           "stop"            "stoppage"       
+#> [340] "straw"           "strike"          "stubble"        
+#> [343] "stump"           "succumb"         "summit"         
+#> [346] "survival"        "sweepings"       "tackle"         
+#> [349] "tailback"        "target"          "tatter"         
+#> [352] "teleology"       "term"            "terminal"       
+#> [355] "terminate"       "termination"     "terminus"       
+#> [358] "threshold"       "tip"             "to"             
+#> [361] "top"             "toxophilite"     "trace"          
+#> [364] "ultimate"        "unfold"          "unraveling"     
+#> [367] "unriddling"      "unscrambling"    "unspinning"     
+#> [370] "untangling"      "untwisting"      "unweaving"      
+#> [373] "upshot"          "utmost"          "uttermost"      
+#> [376] "vanish"          "vestige"         "walkout"        
+#> [379] "waste"           "weird"           "windup"         
+#> [382] "wingback"        "working"         "working-out"    
+#> [385] "wrestler"
 ```
 
 ## Code of Conduct
