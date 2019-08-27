@@ -2,6 +2,7 @@
 
 * Implemented `n_words` to count the number of words in a string. This can be
   useful for subsetting your synonyms.
+* ensured that words are converted to lowercase when looked up (#27)
 
 # syn 0.0.1 "Actual Thing"
 

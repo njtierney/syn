@@ -14,6 +14,8 @@
 #' @export
 syn <- function(word, n_words = -1) {
 
+  word <- tolower(word)
+
   indices <- words_idx[[word]]
 
   if (n_words > 0L && length(indices) > 0L) {
