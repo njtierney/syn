@@ -11,3 +11,4 @@
 ^README-.*\.png$
 ^pkgdown$
 ^cran-comments\.md$
+^CRAN-RELEASE$
