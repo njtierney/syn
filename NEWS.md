@@ -1,8 +1,9 @@
-# syn 0.0.1.9000
+# syn 0.1.0 "Antonym"
 
 * Implemented `n_words` to count the number of words in a string. This can be
   useful for subsetting your synonyms.
 * ensured that words are converted to lowercase when looked up (#27)
+* Easter Egg: Package name was created with `syn::syn("synonym")[2]`
 
 # syn 0.0.1 "Actual Thing"
 

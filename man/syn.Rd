@@ -3,7 +3,6 @@
 \docType{package}
 \name{syn}
 \alias{syn}
-\alias{syn-package}
 \title{syn}
 \usage{
 syn(word, n_words = -1)
