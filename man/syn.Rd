@@ -34,5 +34,5 @@ It's main functions are:
 \item \code{\link[=ants]{ants()}}
 }
 
-Learn more about syn at \url{syn.njtierney.com}
+Learn more about syn at \url{https://syn.njtierney.com/}
 }

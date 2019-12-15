@@ -12,7 +12,7 @@
 #'   \item [ants()]
 #' }
 #'
-#' Learn more about syn at \url{syn.njtierney.com}
+#' Learn more about syn at \url{https://syn.njtierney.com/}
 #' @name syn
 #' @docType package
 NULL

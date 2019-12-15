@@ -1,13 +1,26 @@
 Package: syn
 Title: Creates Synonyms From Target Words
 Version: 0.1.0
-Authors@R: c(person("Nicholas", "Tierney", email = "nicholas.tierney@gmail.com", role = c("aut", "cre")), 
-             person("Amy", "Stringer", email = "amy.stringer@me.com", role = c("aut")),
-             person("Mike", "Cheng", email = "mikefc@coolbutuseless.com", role = c("aut")),
-             person("Laura", "de Jong", role = c("aut")),
-             person("Thomas", "Lumley", email = "thomas.lumley@r-project.org", role = c("ctb")))
-Description: Generates synoynms from a given word drawing from a synonym list
-    from the 'moby' project.
+Authors@R: c(
+  person("Nicholas", "Tierney", 
+         email = "nicholas.tierney@gmail.com", 
+         role = c("aut", "cre"),
+         comment = c(ORCID = "https://orcid.org/0000-0003-1460-8722")), 
+  person("Amy", "Stringer", 
+         email = "amy.stringer@me.com", 
+         role = c("aut"),
+         comment = c(ORCID = "https://orcid.org/0000-0002-0409-7976")),
+  person("Mike", "Cheng", 
+         email = "mikefc@coolbutuseless.com", 
+         role = c("aut")),
+  person("Laura", "de Jong", 
+         role = c("aut")),
+  person("Thomas", "Lumley", 
+         email = "thomas.lumley@r-project.org", 
+         role = c("ctb"))
+         )
+Description: Generates synonyms from a given word drawing from a synonym list
+    from the 'moby' project <http://moby-thesaurus.org/>.
 Depends: R (>= 3.4.0)
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
