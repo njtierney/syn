@@ -22,7 +22,7 @@ Authors@R: c(
 Description: Generates synonyms from a given word drawing from a synonym list
     from the 'moby' project <http://moby-thesaurus.org/>.
 Depends: R (>= 3.4.0)
-License: GPL-3 + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
