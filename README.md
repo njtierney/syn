@@ -10,7 +10,8 @@ status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?bran
 status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project
 Status: Active – The project has reached a stable, usable state and is
 being actively
-developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/syn)](https://cran.r-project.org/package=syn)[![CRAN
+Logs](http://cranlogs.r-pkg.org/badges/syn)](http://cran.rstudio.com/web/packages/syn/index.html)
 
 `syn` is a **zero dependency** R package that lists synonyms and
 antonyms.
@@ -54,18 +55,19 @@ length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…unharmonious, I guess.
+Wow\! There are 618 synonyms for cool. That’s…hinder, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "immeasurable"
+#> [1] "mountainous"
 syn("awesome", 2)
-#> [1] "horrible" "outsize"
+#> [1] "fearsome" "moving"
 syn("awesome", 5)
-#> [1] "wonderful"  "tremendous" "fell"       "grim"       "ineffable"
+#> [1] "sublime"         "unspeakable"     "hideous"         "high and mighty"
+#> [5] "numinous"
 ```
 
 ## Example: Creating a sentence
@@ -78,18 +80,18 @@ of these better?
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really pacifism!
+#> This is really without nerves!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really solidity!
-#> This is really inhospitable!
-#> This is really govern!
-#> This is really hold back!
-#> This is really self-absorbed!
-#> This is really freezing point!
-#> This is really bad!
-#> This is really unruffled!
-#> This is really snub!
-#> This is really juste-milieu!
+#> This is really serene!
+#> This is really unsusceptible!
+#> This is really modest!
+#> This is really undisturbed!
+#> This is really lessen!
+#> This is really spiffy!
+#> This is really restful!
+#> This is really soulless!
+#> This is really decrease in temperature!
+#> This is really unaffable!
 ```
 
 ## Using multiple words with `syns`
@@ -112,14 +114,15 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "wicked"         "saintly"        "sufficient for" "merit"         
-#>  [5] "bon"            "respected"      "worthy"         "chattels"      
-#>  [9] "unpretending"   "omnipotent"    
+#>  [1] "compelling"      "aye"             "well-timed"      "graceful"       
+#>  [5] "use"             "uncounterfeited" "virtuous"        "beneficent"     
+#>  [9] "favorably"       "integrity"      
 #> 
 #> $evil
-#>  [1] "villainy"        "of evil portent" "catastrophic"    "mischievous"    
-#>  [5] "dark"            "nefarious"       "revolting"       "unspeakable"    
-#>  [9] "misfortune"      "pest"
+#>  [1] "treacherous"       "sin of commission" "maleficence"      
+#>  [4] "the worst"         "inexpiable sin"    "heinousness"      
+#>  [7] "harm"              "anxiety"           "impropriety"      
+#> [10] "immorality"
 ```
 
 ## Example: Antonyms (under development)
@@ -148,7 +151,7 @@ ants(c("good", "evil"))
 
 ants(c("good", "evil"), n_words = 5)
 #> $good
-#> [1] "evil" "bad" 
+#> [1] "bad"  "evil"
 #> 
 #> $evil
 #> [1] "good"
