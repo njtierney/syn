@@ -3,30 +3,30 @@
 
 # syn <img src="man/figures/logo.png" align="right" height=140/>
 
-[![Travis build
-status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor
-build
-status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/ropenscilabs/syn/workflows/R-CMD-check/badge.svg)](https://github.com/ropenscilabs/syn/actions)[![Coverage
 status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project
 Status: Active – The project has reached a stable, usable state and is
 being actively
-developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/syn)](https://cran.r-project.org/package=syn)[![CRAN
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/syn)](https://cran.r-project.org/package=syn)[![CRAN
 Logs](http://cranlogs.r-pkg.org/badges/syn)](http://cran.rstudio.com/web/packages/syn/index.html)
+<!-- badges: end -->
 
 `syn` is a **zero dependency** R package that lists synonyms and
 antonyms.
 
 There are two main functions:
 
-  - `syn("great")` Returns synonyms of “great”
-  - `ant("great")` Returns antonyms of “great”.
+-   `syn("great")` Returns synonyms of “great”
+-   `ant("great")` Returns antonyms of “great”.
 
 `syn` and `ant` take one word as input. To return synonyms for many
 words, use the plural form: `syn`**s**, and `ant`**s**
 
-  - `syns(c("great", "excellent")` Returns named list of synonyms of
+-   `syns(c("great", "excellent")` Returns named list of synonyms of
     “great”, and “excellent”
-  - `ants(c("great", "excellent")` Returns named list of antonyms of
+-   `ants(c("great", "excellent")` Returns named list of antonyms of
     “great”, and “excellent”
 
 ## Example: Synonyms for “cool”
@@ -48,26 +48,25 @@ tail(syn_cool)
 #> [5] "wonderlessness" "zealless"
 ```
 
-Wow, there are a lot\! How many are there?
+Wow, there are a lot! How many are there?
 
 ``` r
 length(syn_cool)
 #> [1] 618
 ```
 
-Wow\! There are 618 synonyms for cool. That’s…hinder, I guess.
+Wow! There are 618 synonyms for cool. That’s…restrain, I guess.
 
 You can also provide it a number of words to return with the `n_words`
 argument, which will randomly select the number of words given
 
 ``` r
 syn("awesome", 1)
-#> [1] "mountainous"
+#> [1] "moving"
 syn("awesome", 2)
-#> [1] "fearsome" "moving"
+#> [1] "formidable" "excellent"
 syn("awesome", 5)
-#> [1] "sublime"         "unspeakable"     "hideous"         "high and mighty"
-#> [5] "numinous"
+#> [1] "spacious"     "immortalized" "amazing"      "uncanny"      "big"
 ```
 
 ## Example: Creating a sentence
@@ -76,22 +75,21 @@ OK cool, let’s use these in a sentence, using the `glue` package. Which
 of these better?
 
 ``` r
-
 glue::glue("This is really cool!")
 #> This is really cool!
 glue::glue("This is really {syn('cool', 1)}!")
-#> This is really without nerves!
+#> This is really expectation!
 glue::glue("This is really {syn('cool', 10)}!")
-#> This is really serene!
-#> This is really unsusceptible!
-#> This is really modest!
-#> This is really undisturbed!
-#> This is really lessen!
-#> This is really spiffy!
-#> This is really restful!
-#> This is really soulless!
-#> This is really decrease in temperature!
-#> This is really unaffable!
+#> This is really decelerate!
+#> This is really frosty!
+#> This is really nonchalant!
+#> This is really fab!
+#> This is really soundness!
+#> This is really hold up!
+#> This is really indisturbance!
+#> This is really unsurprised!
+#> This is really standoffish!
+#> This is really hushed!
 ```
 
 ## Using multiple words with `syns`
@@ -114,15 +112,14 @@ selection of the words of that number.
 syns(c("good", "evil"),
      n_words =  10)
 #> $good
-#>  [1] "compelling"      "aye"             "well-timed"      "graceful"       
-#>  [5] "use"             "uncounterfeited" "virtuous"        "beneficent"     
-#>  [9] "favorably"       "integrity"      
+#>  [1] "hallowed"             "diplomatic"           "law-abiding"         
+#>  [4] "unchanging"           "following the letter" "succulent"           
+#>  [7] "fresh"                "fortunate"            "law-revering"        
+#> [10] "normal"              
 #> 
 #> $evil
-#>  [1] "treacherous"       "sin of commission" "maleficence"      
-#>  [4] "the worst"         "inexpiable sin"    "heinousness"      
-#>  [7] "harm"              "anxiety"           "impropriety"      
-#> [10] "immorality"
+#>  [1] "nefarious"   "terrible"    "matter"      "malfeasance" "grisly"     
+#>  [6] "torment"     "mischievous" "bitchy"      "crime"       "catastrophe"
 ```
 
 ## Example: Antonyms (under development)

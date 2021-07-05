@@ -14,7 +14,9 @@ knitr::opts_chunk$set(
 
 # syn <img src="man/figures/logo.png" align="right" height=140/>
 
-[![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/syn)](https://cran.r-project.org/package=syn)[![CRAN Logs](http://cranlogs.r-pkg.org/badges/syn)](http://cran.rstudio.com/web/packages/syn/index.html)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/ropenscilabs/syn/workflows/R-CMD-check/badge.svg)](https://github.com/ropenscilabs/syn/actions)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/syn)](https://cran.r-project.org/package=syn)[![CRAN Logs](http://cranlogs.r-pkg.org/badges/syn)](http://cran.rstudio.com/web/packages/syn/index.html)
+<!-- badges: end -->
 
 
 
