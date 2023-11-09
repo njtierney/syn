@@ -1,9 +1,9 @@
-pandoc: 2.7.3
-pkgdown: 1.6.1
+pandoc: 2.19.2
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-07-05T07:34Z
+last_built: 2023-11-09T06:05Z
 urls:
-  reference: http://syn.njtierney.com//reference
-  article: http://syn.njtierney.com//articles
+  reference: http://syn.njtierney.com/reference
+  article: http://syn.njtierney.com/articles
 
