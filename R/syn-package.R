@@ -15,6 +15,6 @@
 #' Learn more about syn at \url{https://syn.njtierney.com/}
 #' @name syn
 #' @docType package
-NULL
+"_PACKAGE"
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("."))
