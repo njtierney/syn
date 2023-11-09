@@ -1,10 +1,4 @@
 url: http://syn.njtierney.com/
-
 template:
-  params:
-    bootswatch: flatly
+  bootstrap: 5
 
-home:
-  links:
-  - text: Learn more
-    href: https://github.com/ropenscilabs/syn
