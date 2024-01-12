@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://syn.njtierney.com//index.html</loc>
+    <loc>https://syn.njtierney.com/404.html</loc>
   </url>
   <url>
-    <loc>http://syn.njtierney.com//reference/ant.html</loc>
+    <loc>https://syn.njtierney.com/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>http://syn.njtierney.com//reference/ants.html</loc>
+    <loc>https://syn.njtierney.com/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>http://syn.njtierney.com//reference/n_words.html</loc>
+    <loc>https://syn.njtierney.com/authors.html</loc>
   </url>
   <url>
-    <loc>http://syn.njtierney.com//reference/syn.html</loc>
+    <loc>https://syn.njtierney.com/index.html</loc>
   </url>
   <url>
-    <loc>http://syn.njtierney.com//reference/syns.html</loc>
+    <loc>https://syn.njtierney.com/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://syn.njtierney.com/reference/ant.html</loc>
+  </url>
+  <url>
+    <loc>https://syn.njtierney.com/reference/ants.html</loc>
+  </url>
+  <url>
+    <loc>https://syn.njtierney.com/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://syn.njtierney.com/reference/n_words.html</loc>
+  </url>
+  <url>
+    <loc>https://syn.njtierney.com/reference/syn.html</loc>
+  </url>
+  <url>
+    <loc>https://syn.njtierney.com/reference/syns.html</loc>
   </url>
 </urlset>
