@@ -7,13 +7,13 @@
 
 [![R-CMD-check](https://github.com/njtierney/syn/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njtierney/syn/actions/workflows/R-CMD-check.yaml)
 [![Coverage
-status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)
+status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://app.codecov.io/github/ropenscilabs/syn?branch=master)
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/syn)](https://cran.r-project.org/package=syn)
 [![CRAN
-Logs](http://cranlogs.r-pkg.org/badges/syn)](http://cran.rstudio.com/web/packages/syn/index.html)
+Logs](http://cranlogs.r-pkg.org/badges/syn)](https://cran.rstudio.com/web/packages/syn/index.html)
 <!-- badges: end -->
 
 `syn` is a **zero dependency** R package that lists synonyms and

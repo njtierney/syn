@@ -2,6 +2,7 @@
 % Please edit documentation in R/syn-package.R, R/syn.R
 \docType{package}
 \name{syn}
+\alias{syn-package}
 \alias{syn}
 \title{syn}
 \usage{
@@ -35,4 +36,20 @@ It's main functions are:
 }
 
 Learn more about syn at \url{https://syn.njtierney.com/}
+}
+\author{
+\strong{Maintainer}: Nicholas Tierney \email{nicholas.tierney@gmail.com} (\href{https://orcid.org/0000-0003-1460-8722}{ORCID})
+
+Authors:
+\itemize{
+  \item Amy Stringer \email{amy.stringer@me.com} (\href{https://orcid.org/0000-0002-0409-7976}{ORCID})
+  \item Mike Cheng \email{mikefc@coolbutuseless.com}
+  \item Laura de Jong
+}
+
+Other contributors:
+\itemize{
+  \item Thomas Lumley \email{thomas.lumley@r-project.org} [contributor]
+}
+
 }

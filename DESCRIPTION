@@ -1,6 +1,6 @@
 Package: syn
 Title: Creates Synonyms From Target Words
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
   person("Nicholas", "Tierney", 
          email = "nicholas.tierney@gmail.com", 
@@ -24,10 +24,10 @@ Description: Generates synonyms from a given word drawing from a synonym list
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.0
 URL: http://syn.njtierney.com/,
-    https://github.com/ropenscilabs/syn
-BugReports: https://github.com/ropenscilabs/syn/issues
+    https://github.com/njtierney/syn
+BugReports: https://github.com/njtierney/syn/issues
 Roxygen: list(markdown = TRUE)
 Suggests: 
     glue,
