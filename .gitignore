@@ -5,3 +5,4 @@ data-raw/words.txt
 *.DS_Store
 docs/
 docs
+revdep
